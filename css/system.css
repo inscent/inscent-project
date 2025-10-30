@@ -1,0 +1,121 @@
+:root{
+    /* basic size 1rem */
+    --basic-font-pc:20px;
+    --basic-font-tab:18px;
+    --basic-font-mobile:14px;
+
+    /* color variation */
+    --oat-0:#FFFFFF;    
+    --oat-100:#FEFDFB;    
+    --oat-200:#FCFBF5;    
+    --oat-300:#F8F7EF;    
+    --oat-400:#F3F2E7;    
+    --oat-500:#ECEBDE;    
+    --oat-600:#E3E2D2;    
+    --oat-700:#D8D6C5;    
+    --oat-800:#CAC9B7;    
+    --oat-900:#BDBBA8;    
+
+    --slate-gray-0:#F6F6F6;
+    --slate-gray-100:#EFF0F3;
+    --slate-gray-200:#ADB8C4;
+    --slate-gray-300:#9DABB9;
+    --slate-gray-400:#8D97A3;
+    --slate-gray-500:#778594;
+    --slate-gray-600:#5E6B78;
+    --slate-gray-700:#424B54;
+    --slate-gray-800:#21262B;
+    --slate-gray-900:#000000;
+
+    --night-chalk-0:#5E5B5B;
+    --night-chalk-100:#5D5353;
+    --night-chalk-200:#5A4B4B;
+    --night-chalk-300:#554343;
+    --night-chalk-400:#4F3A3A;
+    --night-chalk-500:#463131;
+    --night-chalk-600:#3A2727;
+    --night-chalk-700:#2B1D1D;
+    --night-chalk-800:#1A1111;
+    --night-chalk-900:#080505;
+
+    /* font-weight */
+    --font-strong:600;
+    --font-normal:400;
+
+    /* line-height */
+    --base-line-height:120%;
+    --text-line-height:140%;
+
+    /* spacing */
+    --space-normal:1rem;
+    --space-x-small:0.5rem;
+    --space-2x-small:0.25rem;
+    --space-x-large:2rem;
+    --space-2x-large:3rem;
+    --space-3x-large:6rem;
+
+    /* semantic color */
+    --color-inactive:#777;
+}
+
+    html{
+        font-size: var(--basic-font-pc);
+        font-family: 'Pretendard', sans-serif;
+        line-height: var(--base-line-height);
+        color: var(--night-chalk-700);
+        background-color: #fff;
+    }
+    h1{
+        font-size: 2.45rem;
+        font-weight: var(--font-strong);
+    }
+    h2{
+        font-size: 1.95rem;
+        font-weight: var(--font-strong);
+    }
+    h3{
+        font-size: 1.55rem;
+        font-weight: var(--font-strong);
+    }
+    h4{
+        font-size: 1rem;
+        font-weight: var(--font-strong);
+    }
+    p{
+        font-size: 1rem;
+        line-height: var(--text-line-height);
+    }
+    
+    .b2{
+        font-size: 0.8rem;
+    }
+    .detail{
+        font-size: 0.65rem;
+    }
+    .point{
+        font-family: "Chetta Vissto", "DM Serif Text", "serif";
+        font-weight: 400; 
+        line-height: 1.2;
+    }
+    .point2 {
+    font-family: 'ZEN-SERIF-Regular', 'Pretendard', serif;  
+    font-weight: 400; 
+    line-height: 1.2;
+    }
+    .common-frame{
+        width: auto;
+        margin: 0 3.75rem;
+    }
+    @media (max-width:1024px){
+            .common-frame {
+            width: auto;
+            margin: 0 2rem;
+    }
+    }
+
+    @media (max-width:768px){
+            .common-frame{
+            width: auto;
+            margin: 0 1rem;
+        }
+    }

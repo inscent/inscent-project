@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카트</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/system.css">
+    <link rel="stylesheet" href="./css/cart.css">
+</head>
+<body>
+    <!--지금부터 마이페이지 시작-->
+    <div class="cart__page common-frame">
+        <div class="pcAndtab">
+            <div class="title__title">
+                <p class="point">CART</p>
+            </div>
+            <div class="cart__list">
+                <span>선택</span>
+                <span>상품정보</span>
+                <span>수량</span>
+                <span>배송비</span>
+                <span>상품금액</span>
+                <span>삭제</span>
+            </div>
+            <ul class="cart__list__ul">
+                <li><input type="checkbox"></li>
+                <li class="cart__list__product">
+                    <img src="./img/cart-product.jpg" alt="">
+                    <div class="product__p">
+                        <p>Maison Margiela</p>
+                        <p>메종 마르지엘라 레플리카 레이지 선데이 모닝 오 드 뚜왈렛</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="ea-frame">
+                        <span class="btn-ea-minus">-</span>
+                        <span class="current-ea">1</span>
+                        <span class="btn-ea-plus">+</span>
+                    </div>
+                </li>
+                <li>무료</li>
+                <li>220,000원</li>
+                <li><a href="#">삭제</a></li>   
+            </ul>
+            <div class="cart__list__ul__2">
+                <ul class="cart__list__ul__2-1">
+                    <li>총 상품금액</li>
+                    <li>총 배송비</li>
+                    <li>총 할인금액</li>
+                    <li>결제예정금액</li>
+                </ul>
+                <ul class="cart__list__ul__2-2">
+                    <li>0000원</li>
+                    <li>0000원</li>
+                    <li>-0000원</li>
+                    <li>220,000원</li>
+                </ul>
+            </div>
+            <div class="buttons">
+                <div class="button__bottom__left">
+                    <a href="#">선택삭제</a>
+                </div>
+                <div class="button__bottom__right">
+                    <a href="#">선택상품주문</a>
+                    <a href="#">전체상품주문</a>
+                </div>
+            </div>
+        </div>    
+
+        <!-- mobile전용!! -->
+         <div class="only__mobile">
+            <div class="title__title">
+                <p class="point">CART</p>
+            </div>
+            <div class="about__product">
+                <p>상품정보</p>
+            </div>
+            <ul class="product__is">
+                <li><input type="checkbox"></li>
+                <li><img src="./img/cart-product.jpg" alt=""></li>
+                <li><a href="#">삭제</a></li>
+            </ul>
+            <div class="product__name">
+                <p>Maison Margiela</p>
+                <p>메종 마르지엘라 레플리카 레이지 선데이 모닝 오 드 뚜왈렛</p>
+            </div>
+            <div class="product__info__1">
+                <ul class="product__info__1-1">
+                    <li>수량</li>
+                    <li>배송비</li>
+                    <li>상품금액</li>
+                </ul>
+                <ul class="product__info__1-2"> 
+                    <li>
+                        <div class="ea-frame">
+                            <span class="btn-ea-minus">-</span>
+                            <span class="current-ea">1</span>
+                            <span class="btn-ea-plus">+</span>
+                        </div>
+                    </li>
+                    <li>무료</li>
+                    <li>220,000원</li>
+                </ul>
+            </div>
+            <div class="product__info__2">
+                <ul class="product__info__2-1">
+                    <li>총 상품금액</li>
+                    <li>총 배송비</li>
+                    <li>총 할인금액</li>
+                    <li>결제예정금액</li>
+                </ul>
+                <ul class="product__info__2-2"> 
+                    <li>0000원</li>
+                    <li>0000원</li>
+                    <li>-0000원</li>
+                    <li>220,000원</li>
+                </ul>
+            </div>
+            <div class="mobile__buttons">
+                <a href="#">선택상품주문</a>
+                <a href="#">전체상품주문</a>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
