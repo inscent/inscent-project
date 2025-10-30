@@ -79,6 +79,7 @@ html {
     flex-direction: column;
     color: var(--slate-gray-600);
     justify-content: flex-end;
+    gap: 10px;
 }
 .cost__left ul{
     display: flex;
@@ -164,10 +165,11 @@ html {
     font-size: 31px;
 }
 
-.review__wrap{
+.review__wrap {
     display: flex;
     flex-direction: column;
     gap: 60px;
+    margin-bottom: 6rem;
 }
 .review__page{
     border: 1px solid var(--slate-gray-300);
@@ -176,4 +178,77 @@ html {
     justify-content: space-between;
     align-items: center;
     padding: 40px;
+}
+
+.review__left{
+    width: 566px;
+}
+.review__left p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+.review__left__1{
+    display: flex;
+    gap: 10px;
+}
+.review__left__1 p{
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+.review__left__1 p:nth-of-type(2){
+    font-size: 13px;
+    color: var(--slate-gray-600);
+}
+.review__left__2 figure{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+@media (max-width:1024px){
+    html{
+        font-size: 18px;
+    }
+    .top__space {
+    gap: 18px;
+}
+    .top__space figure img {
+    margin-top: 108px;
+}
+.tag {
+    margin-top: 108px;  
+}
+.tag span {
+    width: 90px;
+    height: 30px;
+}
+.title {
+    margin-bottom: 60px;
+}
+.title P:nth-of-type(2) {
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+.upanddown {
+    margin-bottom: 18px;
+}
+.choose {
+    margin-bottom: 18px;
+}
+.cost__left {
+    gap: 6px;
+}
+.buttons {
+    gap: 10px;
+}
+.buttons a {
+    height: 40px;
+}
+.cost {
+    margin-bottom: 75px;
+}
 }
