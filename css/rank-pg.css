@@ -1,0 +1,210 @@
+/* =========================
+   RANKING PAGE STYLES (최종)
+   ========================= */
+    /* @media (min-width:1920px){
+        .common-frame{
+            width: 1920px;
+            margin: auto;
+        }
+    } */
+.rank-pg {
+    margin-top: 6rem;
+    margin-bottom: 10rem;
+}
+
+/* 제목 */
+.rank-pg h1 {
+    font-family: "Chetta Vissto";
+    font-weight: 400; 
+    line-height: 1.2;
+    text-align: center;
+}
+
+/* =========================
+   CATEGORY FILTER
+   ========================= */
+.rank-pg-category ul {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    margin: 3rem 6rem;
+    padding: 0;
+    list-style: none;
+}
+
+/* a, button 공통 스타일 (필터 버튼 대응) */
+.rank-pg-category a,
+.rank-pg-category a, .rank-pg-category .rank-filter-btn {
+    display: block;
+    padding: 0.4rem;
+    /* width: 5rem; */
+    text-align: center;
+    font-size: 0.7rem;
+    background: #fff;
+    border: 1px solid var(--slate-gray-800);
+    /* border-radius: 999px; */
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.rank-pg-category .rank-filter-btn.is-active,
+.rank-pg-category a.is-active {
+    background: var(--slate-gray-800);
+    color: #fff;
+    border-color: var(--slate-gray-800);
+}
+
+/* =========================
+   PRODUCT LIST
+   ========================= */
+.rank-pg-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.rank-pg-list .product-box {
+    background-color: var(--slate-gray-100);
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    align-items: center;
+}
+
+.rank-pg-list figure {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+}
+
+.rank-pg-list a {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem;
+    color: inherit;
+    text-decoration: none;
+}
+
+.rank-pg-list .thumb {
+    max-width: 188px;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.rank-pg-list .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* =========================
+   TEXT & INFO
+   ========================= */
+.rank-pg-list .brand {
+    color: var(--slate-gray-500);
+    font-weight: 600;
+}
+
+.rank-pg-list .name {
+    font-weight: 400;
+}
+
+.rank-pg-list .price {
+    font-weight: 600;
+}
+
+.rank-pg-list .rank-num {
+    font-family: "Chetta Vissto";
+    font-size: 1.55rem;
+}
+
+.rank-pg-list .rating {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.rank-pg-list .rating img {
+    width: 16px;
+    height: 16px;
+}
+
+/* 텍스트 말줄임 처리 */
+.rank-pg-list figcaption .brand,
+.rank-pg-list figcaption .name {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1; /* 한 줄 말줄임 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* =========================
+   PAGINATION 
+   ========================= */
+.rank-pager {
+    display: flex;
+    gap: .5rem;
+    list-style: none;
+    padding: 0;
+    margin: 6rem 0 0;
+    justify-content: center;
+}
+
+
+.rank-pager button {
+    color: var(--slate-gray-500);
+    padding: .35rem .6rem;
+    border: 1px solid var(--slate-gray-500);
+    background: #fff;
+    /* border-radius: .4rem; */
+    cursor: pointer;
+    min-width: 2.2rem;
+    line-height: 1.2;
+    transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.rank-pager button:hover:not(:disabled) {
+    border-color: var(--slate-gray-800);
+}
+
+.rank-pager button.is-active {
+    background: var(--slate-gray-500);
+    color: #fff;
+    border-color: var(--slate-gray-500);
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+@media (max-width: 1024px) {
+    .rank-pg-list {
+        grid-template-columns: 1fr;
+        grid-gap: 1rem;
+    }
+    .rank-pg-category ul {
+        gap: 1rem;
+        margin: 2rem 1.5rem;
+    }
+    .rank-pg-list .thumb {
+        max-width: 124px;
+    }
+}
+
+@media (max-width: 768px) {
+    .rank-pg-category a,
+    .rank-pg-category .rank-filter-btn {
+        /* width: 4.25rem; */
+        /* font-size: 0.65rem; */
+        padding: 0.25rem 0.4rem;
+    }
+    .rank-pg-list .thumb {
+        max-width: 80px;
+    }
+}

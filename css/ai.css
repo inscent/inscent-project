@@ -50,7 +50,7 @@
     /* 슬라이드 */
     .aicommand {
     height: 100vh;
-    top: 50px;
+    /* top: 50px; */
     }
     .ai{
       margin-bottom: 8rem;

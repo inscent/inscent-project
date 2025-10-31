@@ -1,0 +1,108 @@
+
+html{
+    font-size: var(--basic-font-pc);
+}
+.about-us h1,
+.about-us h2,
+.about-us p {
+  text-align: center;
+}
+.about-us{
+    display: flex;
+    flex-direction: column;
+    /* margin: 0 auto; */
+}
+.about-us>h1{
+    margin: 6rem 0;
+}
+
+.about-us h2{
+    margin-bottom: 3rem;
+}
+.text-box{
+    margin: 0 auto;
+}
+article{
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+.about-us article > * {
+  flex: 1 1 50%;
+  min-width: 0;
+}
+.about-us figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 플로팅버튼 스타일 */
+html { scroll-behavior: smooth; }
+
+.floating-wrap{
+  position: fixed;
+  right: 40px;
+  bottom: calc(40px + env(safe-area-inset-bottom));
+  display: flex; 
+  /* justify-content: center;
+  align-items: center; */
+  flex-direction: column; 
+  gap: 0.6rem; z-index: 1000;
+}
+.floating-btn{
+  width: 55px; 
+  height: 55px; 
+  box-shadow:0 6px 14px rgba(0,0,0,.18);
+  transition:transform .2s, opacity .2s;
+  border-radius: 50%;
+}
+.floating-btn:hover{ transform: translateY(-3px); opacity: .88; }
+.floating-btn img{ width: 100%; height: 100%;  object-fit: contain; }
+/* 태블릿 이하 */
+    @media (max-width: 1024px){
+    html{
+        font-size: var(--basic-font-tab);
+        font-family: inherit; 
+    }
+    .about-us h2 {
+    font-size: 1.55rem;
+    line-height: 1.2;
+}
+    .about-us p{
+        font-size: 1rem;
+    }
+    .common-frame {
+    width: auto;
+    margin: 0 2rem;
+    }
+    /* 플로팅버튼 */
+    .floating-btn{
+    width: 50px; 
+    height: 50px; 
+    }
+}
+    /* 모바일 이하 */
+    @media (max-width: 768px) {
+    html {
+        font-size: var(--basic-font-mobile);
+        font-family: inherit;
+      }
+    .common-frame{
+        width: auto;
+        margin: 0 1rem;
+    }
+    .about-us h2{
+    font-size: 1rem;
+    }
+    .about-us p{
+        font-size: 0.65rem;
+    }
+    .floating-btn{
+    width: 38px; 
+    height: 38px; 
+    }
+}
+

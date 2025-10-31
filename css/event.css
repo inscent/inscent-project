@@ -1,0 +1,71 @@
+/* 기본: 와이드 (PC 기준) */
+@media (min-width: 1920px) {
+  html { font-size: var(--basic-font-wide); } 
+  .mo-event{display: none;}
+}
+
+.mo-event{display: none;}
+.event-frame{
+  width: auto;
+  margin: 0 204px;
+}
+
+h1{
+  font-family: 'ChettaVissto';
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.event-title{
+    /* text-align: left; */
+    margin: 6rem auto;
+}
+.event-item{
+
+    /* max-width: 1512px; */
+    margin-bottom: 3rem;
+    margin: 0 auto;
+}
+.event-item figure{
+
+    height: 100%;
+    margin-bottom: 2rem;
+    object-fit: cover;
+}
+.event-item figure img {
+    object-fit: cover;
+    width: auto;
+    height: 100%;
+}
+.event-item p{
+    text-align: left;
+    margin-top: 0.5rem;
+    margin-bottom: 10rem;
+}
+
+
+/* 태블릿 */
+@media (max-width: 1024px) {
+html { font-size: var(--basic-font-tab); }
+.event-frame{
+  width: auto;
+  margin: 0 117px;
+}
+
+h3{
+  font-size: 1rem;
+}
+
+}
+
+/* 모바일 */
+@media (max-width: 768px) {  
+  html { font-size: var(--basic-font-mobile); }
+  .event-frame{
+  width: auto;
+  margin: 0 63px;
+}
+  .event-item .mo-event{display: block;}
+  .event-item .pc-event{display: none;}
+}     

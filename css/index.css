@@ -1,0 +1,782 @@
+/* =========================
+   메인 히어로 배너 (영상+중앙텍스트)
+   ========================= */
+.title{
+  font-family: "Chetta Vissto";
+  font-weight: 400;
+}
+.hero-banner{
+  position: relative;
+  width: 100%;
+  height: 800px;
+  margin-bottom: 9rem;
+}
+.hero-banner video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+.hero-text{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+}
+.hero-text h1{ 
+  margin-bottom: 1rem; 
+  line-height: 1.2;
+}
+
+/* =========================
+   신상품 섹션 전체 레이아웃
+   ========================= */
+.onlymo{display: none;}
+.main-new {
+    position: relative;
+    z-index: 3;
+    margin-bottom: 10rem;
+}
+.new-txt{ text-align: center; margin-bottom: 4rem; }
+.new-txt h1{ margin-bottom: 2rem; }
+.new-list-frame{ display: flex; gap: 2rem; }
+
+/* =========================
+   카테고리 내비게이션 (좌측)
+   ========================= */
+.new-category{ flex: 0 0 12rem; }
+.new-category li{
+  color: var(--slate-gray-500);
+  font-family: "Chetta Vissto";
+  font-size: 1.95rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+.new-category li:hover{ color: var(--night-chalk-700); }
+
+/* =========================
+   신상품 리스트(스와이프 트랙)
+   ========================= */
+.new-track{ width: 100%; }               /* 스와이프 컨테이너 */
+.product-box{ position: relative; }      /* li = .swiper-slide */
+
+.product-box a{ display: block; width: 100%; }
+.new-list .brand{ color: var(--slate-gray-500); font-weight: 600; }
+.new-list .name{ font-weight: 400; }
+.new-list .price{ font-weight: 600; }
+
+/* =========================
+   찜(하트) 버튼
+   ========================= */
+.main-new .btn-heart,
+.rank-list .btn-heart{
+  all: unset;
+  position: absolute;
+  bottom: 30%;
+  right: 15%;
+  cursor: pointer;
+}
+#rank-hero .btn-heart{
+  all: unset;
+  position: absolute;
+  bottom: 15%;
+  right: 7%;
+  cursor: pointer;
+}
+.btn-heart img{
+  width: 24px;
+  height: 24px;
+  display: block;
+  transition: transform .2s ease;
+}
+.btn-heart:hover img{ transform: scale(1.1); }
+.btn-heart.is-active img{ content: url("../img/icons/heart-icon-fill.svg"); }
+
+/* =========================
+   슬라이더 래퍼·내비 버튼 배치
+   ========================= */
+.slider-wrap{
+  position: relative;   /* 버튼 기준 */
+  flex: 1;
+  min-width: 0;         /* flex 수축 시 넘침 방지 */
+  display: grid;        /* 버튼/트랙 포개기 */
+}
+.new-track{ grid-area: 1 / 1; }
+.btn-prev, .btn-next{ grid-area: 1 / 1; }
+
+.btn-prev, .btn-next{
+  all: unset;
+  width: 44px; height: 44px;
+  position: absolute; top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+  cursor: pointer; z-index: 10; touch-action: manipulation;
+}
+.btn-prev{ left: -22px; }
+.btn-next{ right: -22px; }
+
+/* =========================
+   드래그/상호작용 보조 (옵션)
+   ========================= */
+/* .new-track img{ -webkit-user-drag: none; display: block; }
+.new-track.dragging{ cursor: grabbing; user-select: none; }
+.new-track.dragging a{ pointer-events: none; }
+.slider-wrap.dragging .btn-prev,
+.slider-wrap.dragging .btn-next,
+.slider-wrap.dragging .btn-heart{ pointer-events: none; } */
+
+/* =========================
+   랭킹 섹션 레이아웃
+   ========================= */
+.rank-bg{
+    background-color: var(--slate-gray-100);
+  width: 100%;  
+  height: fit-content;
+  padding: 3rem 0;
+}
+
+.ranking-head{
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  margin-bottom: 3rem;
+}
+
+/* =========================
+   랭킹 그리드(1위 대형 + 우측 리스트)
+   ========================= */
+.rank-list {
+    /* width: max-content; */
+    display: grid;
+    grid-template-columns: 40% 1fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    column-gap: 1rem;
+    column-gap: clamp(3rem, 2vw, 5rem);
+    row-gap: 1rem;
+    grid-auto-flow: column;
+
+}
+/* =========================
+   랭킹 카드 공통·텍스트 스타일
+   ========================= */
+.rank-list > li.product-box{
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  gap: 1rem;
+}
+.rank-list .brand{ color: var(--slate-gray-500); font-weight: 600; }
+.rank-list .name{ font-weight: 400; }
+.rank-list > li.product-box:nth-child(n+2) .brand, 
+.rank-list > li.product-box:nth-child(n+2) .name, 
+.rank-list > li.product-box:nth-child(n+2) .price {
+    display: block;
+    width: 16rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+/* =========================
+   랭킹 1위(왼쪽 대형 카드)
+   ========================= */
+.rank-list > li.product-box:first-child {
+    grid-column: 1 / 2;
+    grid-row: 1 / 5;
+    margin-right: 4rem;
+}
+.rank-list > li.product-box:first-child .thumb{
+  /* height: 577px; */
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  position: relative;
+}
+.rank-list > li.product-box:first-child .thumb img{
+  width: 100%; height: 100%; object-fit: cover;
+}
+.btn-heart-big{
+  position: absolute;
+  right: 1rem; bottom: 1rem;
+  background: #fff; border: none;
+}
+
+/* =========================
+   랭킹 2위~N(우측 리스트)
+   ========================= */
+.rank-list > li.product-box:nth-child(n+2) figure {
+    display: flex;
+    gap: 1rem;
+    overflow: hidden;
+}
+.rank-list > li.product-box:nth-child(n+2) .thumb {
+    max-width: 7rem;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+/* =========================
+   랭킹 순번 표시(자동 카운터)
+   ========================= */
+.rank-list{ counter-reset: rank; }
+.rank-list > li.product-box::before{
+  counter-increment: rank;
+  content: counter(rank);
+  position: absolute;
+  left: -1.5rem; top: 0;
+  font-family: "Chetta Vissto";
+  font-size: 1.55rem;
+}
+.rank-list > li.product-box:first-child::before{
+  left: 1rem; top: 1.5rem; font-size: 2.45rem;
+   z-index: 3;                      /* 카드 위로 올리기 */
+}
+
+
+/*!!-- MAGAZINE SECTION --!!*/
+.magazine-section {
+    height: fit-content;
+    width: auto;
+    /* margin: 10rem 3.75rem; */
+}
+
+.magazine-header {
+  text-align: center;
+  margin-bottom: 5rem;
+  margin-top: 10rem;
+}
+.magazine-header h1 {
+  font-family: "Chetta Vissto", serif;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+/* Layout */
+.magazine-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-items: stretch;
+    grid-auto-rows: minmax(300px, auto);
+    width: 100%;
+    max-width: 1512px;
+    margin: 0 auto;
+    max-height: 726px;
+    margin-bottom: 10rem;
+} 
+/* LEFT (Main Article) */
+.magazine-main{
+  height: 100%;
+}
+.magazine-main figure {
+    border-radius: 0.3rem;
+    /* aspect-ratio: 1/1; */
+    position: relative;
+    /* width: 100%; */
+    height: 100%;
+    overflow: hidden;
+}
+.magazine-main img {
+    aspect-ratio: 1/1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform .5s ease;
+}
+.magazine-main:hover img {
+  transform: scale(1.05);
+}
+.magazine-main figcaption {
+  position: absolute;
+  left: 1.5rem;
+  bottom: 3.5rem;
+  width: 100%;
+  color: #fff;
+}
+.magazine-main figcaption h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.magazine-main figcaption p {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.85);
+}
+
+/* RIGHT (Side Articles) */
+.magazine-side{
+  display:flex;
+  flex-direction:column;
+  gap:1.5rem;
+  height:100%;
+  min-height:0;
+}
+.magazine-item{
+  display:flex;
+  align-items:center;
+  gap:1.5rem;
+  flex:1; 
+}
+.magazine-main-link {
+    display: block;
+    height: 100%;
+}
+.magazine-item a {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+    background: var(--slate-gray-100);
+    border-radius: 0.3rem;
+    /* box-shadow: 0 0 10px rgba(0,0,0,0.1); */
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.magazine-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.04);
+}
+.magazine-item figure {
+    flex: 0 0 7.5rem;
+    aspect-ratio: 1/1;
+    border-radius: .3rem;
+    overflow: hidden;
+}
+.magazine-item figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.magazine-txt {
+    width: 100%;
+    flex: 0 1 100%;
+    /* align-self: flex-start; */
+}
+.magazine-txt h4 {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--slate-gray-800);
+}
+.magazine-txt p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--slate-gray-400);
+}
+
+
+/* !!!배너!!! */
+.main-banner{
+  width: 100%;
+  margin-bottom: 10rem;
+}
+
+
+/* !!! 커뮤니티 전체 레이아웃 !!! */
+
+/* 섹션 여백과 기본 타이포 정렬 */
+.main-community{
+  margin-bottom: 10rem;
+}
+.main-community h1{ 
+  margin-bottom: 2rem; 
+  text-align: center;
+}
+.main-community > p{ 
+  margin-bottom: 4rem; 
+  text-align: center; 
+}
+
+/* 좌우 2컬럼 래핑 + 고정 높이 컨테이너 */
+.talk-wrap{        
+  /* height: 500px; */
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1.25rem;
+}
+.talk-wrap>*{
+  flex: 1;
+}
+/* 좌/우 래퍼 공통 플렉스 컨테이너 */
+.main-ad-wrap,
+.main-free-wrap{
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+  gap: 1rem;
+}
+
+/* 좌/우 썸네일 링크(고정 가로 + 중앙 오버레이 타이틀) */
+.main-ad-wrap > a, .main-free-wrap > a {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    flex: 0 0 280px;
+    aspect-ratio: 9/16;
+    height: 100%;
+}
+
+/* 썸네일 이미지(가득 채우기) */
+.com-img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* 썸네일 중앙 타이틀 */
+.main-ad-wrap > a > h1,
+.main-free-wrap > a > h1{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  font-family: "Chetta Vissto", serif;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+/* 우측 컬럼: 카드 3개 세로 스택 */
+.ad-right, .free-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    justify-content: space-between;
+    min-height: 0;
+    overflow: hidden;
+    width: auto;
+}
+
+/* 카드 박스 공통(세로 레이아웃 + 내부 여백) */
+.ad-card, .free-card {
+    display: flex;
+    flex-direction: column;
+    /* flex: 1 1 0; */
+    min-height: 0;
+    overflow: hidden;
+    padding: 0.7rem;
+    border: 1px solid var(--slate-gray-100, #e5e7eb);
+    border-radius: 0.5rem;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+/* 카드 전체 링크화 시 클릭 영역 확장 */
+.ad-card > a,
+.free-card > a{
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 카드 제목(1줄 말줄임) */
+.ad-card h4,
+.free-card h4{
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 카드 본문(2줄 말줄임) */
+.ad-card p,
+.free-card p{
+  margin: 0 0 0.75rem;
+  color: #4b5563;
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 카드 메타(하단 고정 영역) */
+.talk-meta{
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 1.2rem;
+  font-size: 0.75rem;
+  color: #9aa0a6;
+}
+.talk-meta .comment img{
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+  vertical-align: -2px;
+  opacity: .8;
+}
+
+
+/* ============ 반응형 ============ */
+@media (max-width: 1800px) {
+.rank-list {
+    column-gap: clamp(2rem, 2vw, 3rem);
+}
+  /* 그리드/플렉스 자식이 폭을 밀어넣지 않게 */
+  .rank-list > li,
+  .rank-list .thumb,
+  .rank-list figcaption { 
+    min-width: 0;
+   }
+
+  .rank-list > li.product-box:first-child {
+    margin-right: 2rem;
+}
+
+.rank-list > li.product-box:nth-child(n+2) .brand, .rank-list > li.product-box:nth-child(n+2) .name, .rank-list > li.product-box:nth-child(n+2) .price {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+/* 커뮤니티 */
+.main-ad-wrap > a, .main-free-wrap > a {
+    flex: 0 0 190px;
+
+}
+}
+
+@media (max-width: 1440px){
+
+  /* 랭킹 */
+  .rank-list > li.product-box:nth-child(n+6){
+    display: none;
+  }
+.rank-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    column-gap: 1rem;
+    column-gap: clamp(3rem, 2vw, 5rem);
+    row-gap: 1rem;
+    grid-auto-flow: column;
+    /* width: auto; */
+}
+    /* 매거진 */
+    .magazine-txt {
+  display: -webkit-box;          /* 멀티라인을 위한 레이아웃 */
+  -webkit-box-orient: vertical;  /* 세로 방향 */
+  -webkit-line-clamp: 3;         /* ★ 3줄까지만 표시 */
+  overflow: hidden;              /* 넘치는 텍스트 숨김 */
+}
+.magazine-side {
+    gap: 0.5rem;
+}
+ 
+    /* 커뮤니티 */
+
+  .talk-wrap {
+    /* height: 500px; */
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: stretch;
+  }
+  .main-ad-wrap > a, .main-free-wrap > a {
+    flex: 0 0 280px;
+}
+}
+/* 탭 */
+@media(max-width:1024px){
+  /* 신상품 */
+  .new-category {
+    flex: 0 0 10rem;
+}
+.btn-prev, .btn-next {
+    width: 36px;
+    height: 36px;
+}
+.talk-wrap {
+    flex-direction: column;
+}
+.rank-list > li.product-box:nth-child(n+2) .brand, .rank-list > li.product-box:nth-child(n+2) .name, .rank-list > li.product-box:nth-child(n+2) .price {
+  width: unset;
+}
+  .main-ad-wrap > a, .main-free-wrap > a {
+    flex: 0 0 280px;
+}
+}
+/* 모바일 */
+@media (max-width:768px){
+  /* 신상품 */
+  .onlymo{display: block;
+  position: absolute;
+  left: 15%;
+  top: -12%;
+
+}
+  .new-category {
+    display: flex;
+    gap: 1rem;
+}
+.new-txt{
+  display: flex;
+}
+.new-txt p{
+  display: none;
+}
+.new-list-frame {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.new-category li {
+    font-size: 1rem;
+}
+.new-category {
+    flex: 0 0 10rem;
+    position: absolute;
+    z-index: 4;
+    top: -10%;
+    left: 23%;
+}
+.new-txt h1 {
+    text-align: left;
+    position: absolute;
+    top: -10%;
+    left: 0;
+    font-size: 1.95rem;
+    z-index: 4;
+}
+.btn-heart img {
+    width: 17px;
+    height: 17px;
+}
+.main-new .btn-heart{
+    bottom: 35%;
+    right: 15%;
+
+}
+.btn-prev, .btn-next{
+  display: none;
+} 
+/* 랭킹 */
+.ranking-head {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 3.5rem;
+}
+.rank-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* margin: auto 2em; */
+}
+.rank-list li>figure:first-child{
+    margin-bottom: 2rem;
+}
+.rank-list > li.product-box:first-child {
+    margin-right: 0;
+}
+.rank-list > li.product-box:nth-child(n+2) {
+    width: 100%;
+}
+.rank-list {
+    display: flex;
+    flex-direction: column;;
+}
+.rank-list > li.product-box::before {
+    left: 0.3rem;
+    top: 0.3rem;
+}
+.rank-list > li.product-box:nth-child(n+2) .brand, .rank-list > li.product-box:nth-child(n+2) .name, .rank-list > li.product-box:nth-child(n+2) .price {
+  width: auto;
+}
+
+  /* 매거진 */
+  .magazine-section {
+    height: fit-content;
+    width: auto;
+}
+  .magazine-wrap {
+    grid-template-columns: 1fr;
+}
+  /* 인센톡 */
+  .main-ad-wrap, .main-free-wrap {
+    flex-direction: column;
+}
+.main-ad-wrap > a, .main-free-wrap > a {
+    aspect-ratio: 9/16;
+
+}
+.talk-wrap {
+    gap: 4rem;
+}
+}
+
+@media (max-width: 400px) {
+  /* new */
+.onlymo {
+   display: none;
+}
+.new-txt{
+    display: flex;
+   flex-direction: column;
+}
+.new-txt h1 {
+    font-size: 2.45rem;
+}
+.new-category {
+    flex: 0;
+    position: absolute;
+    z-index: 4;
+    top: 5%;
+    left: 0;
+}
+/* magazine */
+.magazine-section {
+    height: fit-content;
+    width: auto;
+}
+
+.magazine-main figure {
+    width: auto;
+    height: auto;
+}
+.magazine-main figcaption {
+    width: auto;
+}
+.magazine-item {
+    gap: 1rem;
+}
+.magazine-item figure {
+    flex: 0 0 4rem;
+}
+.magazine-item a {
+    box-sizing: border-box;
+    width: auto;
+    height: auto;
+}
+.magazine-item {
+    flex: 0;
+}
+.magazine-wrap {
+    grid-auto-rows: auto;
+}
+
+/* 배너 */
+.main-banner {
+  display: none;
+}
+}

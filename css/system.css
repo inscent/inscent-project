@@ -1,3 +1,9 @@
+@media (min-width:1920px) {
+    .wide-frame, .footer-frame{
+        max-width: 1920px;
+        margin:0 auto ;
+    }
+  }
 :root{
     /* basic size 1rem */
     --basic-font-pc:20px;
@@ -63,7 +69,6 @@
         font-family: 'Pretendard', sans-serif;
         line-height: var(--base-line-height);
         color: var(--night-chalk-700);
-        background-color: #fff;
     }
     h1{
         font-size: 2.45rem;
@@ -90,7 +95,7 @@
         font-size: 0.8rem;
     }
     .detail{
-        font-size: 0.65rem;
+        font-size: 0.7rem;
     }
     .point{
         font-family: "Chetta Vissto", "DM Serif Text", "serif";
@@ -100,22 +105,23 @@
     .point2 {
     font-family: 'ZEN-SERIF-Regular', 'Pretendard', serif;  
     font-weight: 400; 
-    line-height: 1.2;
     }
+
     .common-frame{
         width: auto;
         margin: 0 3.75rem;
     }
     @media (max-width:1024px){
-            .common-frame {
-            width: auto;
-            margin: 0 2rem;
-    }
+        .common-frame {
+        width: auto;
+        margin: 0 2rem;
+    }       
     }
 
     @media (max-width:768px){
-            .common-frame{
-            width: auto;
-            margin: 0 1rem;
+        .common-frame{
+        width: auto;
+        margin: 0 1rem;
         }
     }
+    

@@ -214,10 +214,6 @@ header.scrolled {
  border-radius: 0.25rem;
 }
 
-.main__banner video{
-    width: 100%;
-    object-fit: cover;
-}
 
 /* 랭킹, 상품 헤더 이미지 */
 

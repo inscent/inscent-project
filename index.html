@@ -1,0 +1,321 @@
+   <!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>메인페이지</title>
+  <!-- 스타일 -->
+<link rel="stylesheet" href="./css/reset.css"/>
+<link rel="stylesheet" href="./css/font.css"/>
+<link rel="stylesheet" href="./css/system.css"/>
+
+<!-- <link rel="stylesheet" href="./css/thisisrealrealreal.css"> -->
+<link rel="stylesheet" href="./css/real-footer.css">
+<link rel="stylesheet" href="./css/index.css"/>
+
+
+<!-- js -->
+ <!-- <script src="./js/thisisrealrealreal.js"></script> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+<script src="./js/mainpage.js"></script>
+</head>
+<body>
+
+<!-- ========================================
+ 메인페이지 시작
+ ============================================ -->
+  <main>
+    <!-- 메인 영상 배너 -->
+    <section class="hero-banner" aria-label="메인 영상 배너">
+      <video src="./img/hero-banner.mp4" autoplay muted loop playsinline></video>
+      <div class="hero-text">
+        <h1 class="title">A Moment Within Scent</h1>
+        <p>향기 속에서 머무는 순간</p>
+      </div>
+    </section>
+<div class="wide-frame">
+    <!-- 신상품 섹션 -->
+    <section class="main-new common-frame">
+      <!-- 섹션 타이틀 -->
+      <div class="new-txt">
+        <h1 class="title">NEW</h1><div class="onlymo"><img src="./img/Line 2.svg" alt=""></div>
+        <p class="b1">새로운 향은 언제나 새로운 기억을 남깁니다. 당신의 오늘을 닮은 향, 지금 가장 먼저 만나보세요.</p>
+      </div>
+
+      <div class="new-list-frame">
+        <!-- 카테고리 내비게이션 -->
+        <ul class="new-category">
+          <li><a href="#" data-category="PERFUME">PERFUME</a></li>
+          <li><a href="#" data-category="BODY">BODY</a></li>
+          <li><a href="#" data-category="HAIR">HAIR</a></li>
+          <li><a href="#" data-category="ETC">ETC.</a></li>
+        </ul>
+
+
+        <!-- 스와이프 슬라이더 -->
+        <div class="slider-wrap">
+          <button class="btn-prev" aria-label="이전 상품">
+            <img src="./img/icons/arrow-left.svg" alt="이전상품보기">
+          </button>
+
+          <div class="new-track swiper">
+            <ul class="new-list swiper-wrapper">
+              <!-- js-li -->
+            </ul>
+          </div>
+
+          <button class="btn-next" aria-label="다음 상품">
+            <img src="./img/icons/arrow-right.svg" alt="다음 상품 보기">
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 랭킹 섹션 -->
+    <div class="rank-bg">
+      <section class="main-ranking common-frame " aria-labelledby="ranking-title">
+        <div class="ranking-head">
+          <h1 id="ranking-title" class="title">RANKING</h1>
+          <p>가장 많은 사람들이 선택한 향수, 지금 인센트에서 가장 뜨거운 향기들을 만나보세요.</p>
+        </div>
+        
+        <div class="ranking-wrap">
+          <ol id="rank-list" class="rank-list"></ol>
+        </div>
+      </section>
+    </div>
+
+    <!-- 매거진 영역 -->
+    <section class="magazine-section common-frame" aria-labelledby="magazine-title">
+  <div class="mz-frame">
+    <div class="magazine-header">
+      <h1 id="magazine-title">MAGAZINE</h1>
+      <p>향기에 담긴 이야기를 전합니다.<br>
+        브랜드 인터뷰부터 향 트렌드까지, 향의 세계를 깊이 있게 탐구해보세요.</p>
+    </div>
+
+    <div class="magazine-wrap">
+      <!-- Left: Main article -->
+      <article class="magazine-main">
+        <a href="#" class="magazine-main-link">
+          <figure>
+            <img src="./img/magazine/mz0.jpg" alt="니치향수 vs 패션향수">
+            <figcaption>
+              <h3>니치향수 VS 패션향수</h3>
+              <p>취향의 시대, 우리는 무엇을 고를까</p>
+            </figcaption>
+          </figure>
+        </a>
+      </article>
+
+      <!-- Right: Sub articles -->
+      <div class="magazine-side">
+        <article class="magazine-item">
+          <a href="#">
+            <figure><img src="./img/magazine/mz1.jpg" alt="향수 농도의 비밀"></figure>
+            <div class="magazine-txt">
+              <h4>향수, 그 농도의 비밀</h4>
+              <p>향수는 단순히 “좋은 향”을 담은 병이 아닙니다. 그 속에는 농도에 따른 성격과 개성이 숨어 있습니다....</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="magazine-item">
+          <a href="#">
+            <figure><img src="./img/magazine/mz2.jpg" alt="뿌리는 위치에 따라 달라지는 매력"></figure>
+            <div class="magazine-txt">
+              <h4>뿌리는 위치에 따라 달라지는 매력</h4>
+              <p>같은 향수라도 어디에 뿌리느냐에 따라 그 인상이 크게 달라집니다....</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="magazine-item">
+          <a href="#">
+            <figure><img src="./img/magazine/mz3.jpg" alt="초보자를 위한 향수 시향 가이드"></figure>
+            <div class="magazine-txt">
+              <h4>초보자를 위한 향수 시향 가이드</h4>
+              <p>내용을 입력해 향수 매장에서 첫 시향, 어디서부터 시작해야 할지 막막하셨나요?...</p>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- 배너 영역 -->
+    <section class="main-banner ">
+      <img src="./img/main-banner01.jpg" alt="">
+    </section>
+
+    <!-- 커뮤니티 영역 -->
+    <section class="main-community common-frame">
+      <div class="main-title">
+        <h1 class="title">INSCENTALK</h1>
+      </div>
+      
+      <p>취향을 나누고, 질문하고, 함께 공감해보세요.</p>
+      <div class="talk-wrap">
+      <article class="ad">
+          <div class="main-ad-wrap">
+            <a href="#"><img class="com-img" src="./img/talk.jpg" alt="">
+              <h1>ADVICE</h1>
+            </a>
+            <div class="ad-right">
+                <div class="ad-card"><a href="#">
+                  <h4>요즘 가을에 잘 어울리는 향수 뭐 쓰세요?</h4>
+                  <p>안녕하세요, 다들 요즘 가을 향수 뭐 쓰고 계신가요? 저는 이번에 무겁지 않고 은은한 느낌 찾고 있는데, 약간 우디하면서도 달콤한 느낌이었으면 해요. 추천해주실 만한 거 있을까요</p>
+                    <div class="talk-meta">
+                      <span class="author">개코</span>
+                      <span class="time">· 1일 전</span>
+                      <span class="view">· 조회 150</span>
+                      <span class="comment"> <img src="./img/icons/clarity_talk-bubbles-line.svg" alt=""> 7</span>
+                    </div>
+                </a>
+              </div>
+                <div class="ad-card"><a href="#">
+                  <h4>남친 선물용 향수 추천 좀 해주세요</h4>
+                  <p>안녕하세요, 다들 도움 좀 부탁드려요. 남자친구 생일 선물로 향수를 사주고 싶은데, 너무 강한 향은 싫어하고 깔끔하면서 세련된 느낌이면 좋겠어요.혹시 추천해주실 만한 브랜드나 향수 있을까요?</p>
+                    <div class="talk-meta">
+                      <span class="author">개코</span>
+                      <span class="time">· 1일 전</span>
+                      <span class="view">· 조회 150</span>
+                      <span class="comment"> <img src="./img/icons/clarity_talk-bubbles-line.svg" alt=""> 7</span>
+                    </div>
+                </a>
+              </div>
+                <div class="ad-card"><a href="#">
+                  <h4>향수 냄새가 잘 안 느껴져요, 왜 그런 걸까요?</h4>
+                  <p>평소에 향수 뿌리면 금방 향이 퍼지고 좋았는데, 최근 들어 뿌려도 거의 안 느껴져서 고민이에요. 혹시 후각이 둔해진 건가 싶기도 하고…혹시 이런 경험 있으신 분 계신가요?</p>
+                    <div class="talk-meta">
+                      <span class="author">개코</span>
+                      <span class="time">· 1일 전</span>
+                      <span class="view">· 조회 150</span>
+                      <span class="comment"> <img src="./img/icons/clarity_talk-bubbles-line.svg" alt=""> 7</span>
+                    </div>
+                </a>
+              </div>              
+            </div>
+          </div>
+      </article>
+      <article class="FREETALK">
+        <div class="main-free-wrap">
+          
+            <a href="#"><img class="com-img" src="./img/reveiw.jpg" alt="">
+            <h1>FREE<br>TALK</h1>
+            </a>
+            <div class="free-right">
+                <div class="free-card"><a href="#">
+                  <h4>이번 주 새로 나온 향수 써본 사람 있나요?</h4>
+                  <p>이번 주에 XX 브랜드에서 새로 나온 향수 나왔다고 해서 궁금한데, 혹시 써보신 분 있어요?
+광고 사진만 보면 플로럴 느낌인데, 실제로는 어떤지 궁금하네요.</p>
+                    <div class="talk-meta">
+                      <span class="author">개코</span>
+                      <span class="time">· 1일 전</span>
+                      <span class="view">· 조회 150</span>
+                      <span class="comment"> <img src="./img/icons/clarity_talk-bubbles-line.svg" alt=""> 7</span>
+                    </div>
+                </a>
+              </div>
+                <div class="free-card"><a href="#">
+                  <h4>향수 뿌리는 위치, 다들 어디에 하세요?</h4>
+                  <p>안녕하세요! 다들 향수 어디에 뿌리세요?
+저는 늘 손목만 뿌리는데, 금방 향이 날아가는 느낌이라 고민이에요. 다른 팁 있으면 공유해주실 수 있나요?</p>
+                    <div class="talk-meta">
+                      <span class="author">개코</span>
+                      <span class="time">· 1일 전</span>
+                      <span class="view">· 조회 150</span>
+                      <span class="comment"> <img src="./img/icons/clarity_talk-bubbles-line.svg" alt=""> 7</span>
+                    </div>
+                </a>
+              </div>
+                <div class="free-card"><a href="#">
+                  <h4>이번에 새 향수 샀는데 생각보다 안 맞네요…</h4>
+                  <p>안녕하세요, 다들 혹시 새 향수 사서 기대했는데 막상 뿌리면 별로일 때 있으세요?
+이번에 플로럴 향 샀는데 생각보다 제 취향이 아니고 너무 강해서… 속상하네요.</p>
+                    <div class="talk-meta">
+                      <span class="author">개코</span>
+                      <span class="time">· 1일 전</span>
+                      <span class="view">· 조회 150</span>
+                      <span class="comment"> <img src="./img/icons/clarity_talk-bubbles-line.svg" alt=""> 7</span>
+                    </div>
+                </a>
+            </div>
+          </div>
+      </article>
+      </div>
+    </section>
+    </div>
+  </main>
+
+  <!-- 플로팅버튼스타일 -->
+  <div class="floating-wrap">
+    <!-- Top -->
+    <a href="#top" class="floating-btn toTop" aria-label="상단으로 이동">
+      <img src="./img/icons/top.svg" alt="상단으로 이동">
+    </a>
+    <!-- 1:1 문의 -->
+    <a href="/contact.html" class="floating-btn toChat" aria-label="1:1 문의하기">
+      <img src="./img/icons/chat.svg" alt="1:1 문의하기">
+    </a>
+  </div>
+</div>
+
+  <!-- 푸터 -->
+  <footer>
+    <div class="footer-frame">
+      <div class="footer-wrap">
+        <!-- 푸터 왼쪽 정보 -->
+        <div class="footer-left">
+          <img class="logo" src="./img/logo/logo.svg" alt="인센트(InScent) 로고"/>
+
+          <div class="footer-info">
+            <p class="detail">회사명 : 인센트 (INSCENT) | 주소 : 경기도 성남시 분당구 돌마로 46 5층 그린컴퓨터아카데미 성남분당점 | 이메일 : <a href="mailto:contact@inscent.co.kr">contact@inscent.co.kr</a></p>
+            <p class="detail">Tel: <a href="tel:15222025">1522-2025</a> | 고객센터 : <a href="tel:12345678">1234-5678</a> (운영시간: 평일 09:00 ~ 18:00 / 토·일·공휴일 휴무)</p>
+            <p class="detail">대표 개인정보보호책임자 : 이룸 (<a href="mailto:privacy@inscent.co.kr">privacy@inscent.co.kr</a>)</p>
+            <p class="detail">사업자등록번호 : 123-45-67890 | 통신판매업신고번호 : 2025-경기성남-01234</p>
+            <p class="detail">안전거래를 위하여 페이먼트 구매안전(에스크로)에 가입하여 서비스를 제공하고 있습니다.</p>
+            <p class="detail">Copyright ⓒ INSCENT, All rights reserved.</p>
+          </div>
+
+          <nav class="footer-menu" aria-label="푸터 메뉴">
+            <ul>
+              <li><a href="#">회사소개</a></li>
+              <li><a href="#">이용약관</a></li>
+              <li><a href="#">개인정보처리방침</a></li>
+              <li><a href="#">매장찾기</a></li>
+              <li><a href="#">고객센터</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- 푸터 오른쪽 정보 -->
+        <div class="footer-right">
+          <h4>Customer Center</h4>
+          <p><a href="tel:12345678">1234-5678</a></p>
+          <p class="b2">운영시간 10:00 - 17:00 (점심시간 12:00 - 13:00)<br/>주말 및 공휴일 휴무</p>
+          <a href="#" class="btn-inquiry">1:1 문의하기</a>
+
+          <div class="footer-sns">
+            <a href="#" target="_blank" aria-label="인스타그램">
+              <img src="./img/icons/instagram-40.svg" alt="인스타그램">
+            </a>
+            <a href="#" target="_blank" aria-label="카카오톡">
+              <img src="./img/icons/kakao-talk-40.svg" alt="카카오톡">
+            </a>
+            <a href="#" target="_blank" aria-label="네이버">
+              <img src="./img/icons/naver-40.svg" alt="네이버">
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 푸터 안내 문구 -->
+      <p class="detail" id="footer-notice">본 페이지는 취업 용도의 포트폴리오 홈페이지 입니다.</p>
+    </div>
+  </footer>
+</body>
+</html>

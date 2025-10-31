@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
-  <title>AI 추천</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI매칭</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/system.css">
+     <link rel="stylesheet" href="./css/ai.css">
+    <script src="./js/ai.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
   <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/font.css">
-  <link rel="stylesheet" href="./css/system.css">
-  <link rel="stylesheet" href="./css/ai.css">
-  <script src="./js/ai.js"></script>
 </head>
-
 <body>
-  <!-- Swiper -->
-  <div class="swiper mySwiper">
+
+    <!-- Swiper -->
+  <div class="swiper aicommand">
     <div class="swiper-wrapper">
 
       <!-- slide1 -->
       <div class="swiper-slide slide1" id="first">
         <p><span class="point">INSCENT</span>는 수많은 향수 속에서 <br class="mobile-only">당신의 취향을 찾아드립니다.
           <br class="mobile-only"><br class="mobile-only">AI가 제안하는, 당신만의 향을 만나보세요.</p>
-          <button><a href="#slide2">나를 위한 향수 찾기</a></button>
+          <button id="firstfirst"><a href="#">나를 위한 향수 찾기</a></button>
       </div>
 
       <!-- slde2 -->
       <div class="swiper-slide slide2" id="slide2">
         <div class = "ai-title"><p>어떤 향계열을 가장 선호하시나요?</p></div>
           <div class="ai">
-          <ul>
-            <li><a href="#slide3"><img src="./img/ai-floral.jpg" alt="">
+          <ul class="ai-query-step-1">
+            <li><a href="#"><img src="./img/ai-floral.jpg" alt="">
               <p>floral</p>
             </a></li>
-            <li><a href="#slide3"><img src="./img/ai-fresh.jpg" alt="">
+            <li><a href="#"><img src="./img/ai-fresh.jpg" alt="">
               <p>fresh</p>
             </a></li>
-            <li><a href="#slide3"><img src="./img/ai-woody.jpg" alt="">
+            <li><a href="#"><img src="./img/ai-woody.jpg" alt="">
               <p>woody</p>
             </a></li>
-            <li><a href="#slide3"><img src="./img/ai-oriental.jpg" alt="">
+            <li><a href="#"><img src="./img/ai-oriental.jpg" alt="">
               <p>oriental</p>
             </a></li>
           </ul>
@@ -52,17 +52,17 @@
       <div class="swiper-slide slide3" id="slide3">
         <div class="ai-title"><p>향수를 주로 어떤 상황에서 사용하시나요 ?</p></div>
           <div class="ai">
-            <ul>
-              <li><a href="#slide4"><img src="./img/ai-everyday.jpg" alt="">
+            <ul class="ai-query-step-2">
+              <li><a href="#"><img src="./img/ai-everyday.jpg" alt="">
                 <p>일상 · 출근</p>
               </a></li>
-              <li><a href="#slide4"><img src="./img/ai-specialday.jpg" alt="">
+              <li><a href="#"><img src="./img/ai-specialday.jpg" alt="">
                 <p>특별한 날</p>
               </a></li>
-              <li><a href="#slide4"><img src="./img/ai-date.jpg" alt="">
+              <li><a href="#"><img src="./img/ai-date.jpg" alt="">
                 <p>데이트</p>
               </a></li>
-              <li><a href="#slide4"><img src="./img/ai-refresh.jpg" alt="">
+              <li><a href="#"><img src="./img/ai-refresh.jpg" alt="">
                 <p>리프레시</p>
               </a></li>
             </ul>
@@ -74,20 +74,20 @@
       <div class="swiper-slide slide4" id="slide4">
         <div class="ai-title"><p>향수가 주는 이미지를 선택해 주세요.</p></div>
           <div class="ai">
-            <ul>
-              <li><a href="#slide5"><img src="./img/ai-refine.jpg" alt="">
+            <ul class="ai-query-step-3">
+              <li><a href="#"><img src="./img/ai-refine.jpg" alt="">
                 <p>세련된</p>
               </a></li>
-              <li><a href="#slide5"><img src="./img/ai-warm.jpg" alt="">
+              <li><a href="#"><img src="./img/ai-warm.jpg" alt="">
                 <p>따뜻한</p>
               </a></li>
-              <li><a href="#slide5"><img src="./img/ai-crisp.jpg" alt="">
+              <li><a href="#"><img src="./img/ai-crisp.jpg" alt="">
                 <p>상쾌한</p>
               </a></li>
-              <li><a href="#slide5"><img src="./img/ai-strong.jpg" alt="">
+              <li><a href="#"><img src="./img/ai-strong.jpg" alt="">
                 <p>강렬한</p>
               </a></li>
-              <li><a href="#slide5"><img src="./img/ai-sensuous.jpg" alt="">
+              <li><a href="#"><img src="./img/ai-sensuous.jpg" alt="">
                 <p>감각적인</p>
               </a></li>
             </ul>
@@ -99,14 +99,14 @@
       <div class="swiper-slide slide5" id="slide5">
         <div class="ai-title"><p>향수의 지속력은 어떤 것을 선호하시나요 ?</p></div>
           <div class="ai">
-            <ul>
-              <li><a href="#slide6"><img src="./img/ai-soft.png" alt="">
+            <ul class="ai-query-step-4">
+              <li><a href="#"><img src="./img/ai-soft.png" alt="">
                 <p>가볍고 은은하게</p>
               </a></li>
-              <li><a href="#slide6"><img src="./img/오래가고 진하게.png" alt="">
+              <li><a href="#"><img src="./img/오래가고 진하게.png" alt="">
                 <p>오래가고 진하게</p>
               </a></li>
-              <li><a href="#slide6"><img src="./img/상황에따라다르게.png" alt="">
+              <li><a href="#"><img src="./img/상황에따라다르게.png" alt="">
                 <p>상황에 따라 다르게</p>
               </a></li>
             </ul>
@@ -118,20 +118,20 @@
       <div class="swiper-slide slide6" id="slide6">
         <div class="ai-title"><p>향수를 통해 어떤 분위기를 표현 하고 싶으신가요 ?</p></div>
           <div class="ai">
-            <ul>
-              <li><a href="#slide7"><img src="./img/자신감있는.jpg" alt="">
+            <ul class="ai-query-step-5">
+              <li><a href="#"><img src="./img/자신감있는.jpg" alt="">
                 <p>자신감 있는</p>
               </a></li>
-              <li><a href="#slide7"><img src="./img/편안함.jpg" alt="">
+              <li><a href="#"><img src="./img/편안함.jpg" alt="">
                 <p>편안한</p>
               </a></li>
-              <li><a href="#slide7"><img src="./img/로맨틱한.jpg" alt="">
+              <li><a href="#"><img src="./img/로맨틱한.jpg" alt="">
                 <p>로맨틱한</p>
               </a></li>
-              <li><a href="#slide7"><img src="./img/에너제틱한.jpg" alt="">
+              <li><a href="#"><img src="./img/에너제틱한.jpg" alt="">
                 <p>에너제틱한</p>
               </a></li>
-              <li><a href="#slide7"><img src="./img/신비로운.jpg" alt="">
+              <li><a href="#"><img src="./img/신비로운.jpg" alt="">
                 <p>신비로운</p>
               </a></li>
             </ul>
@@ -151,7 +151,7 @@
 
       <!-- slide8 -->
       <div class="swiper-slide slide8" id="slide8">
-        <div class="ai-title"><p class="point">INSCENT의 당신을 위한 추천 향수 입니다 !</p></div>
+        <div class="ai-title"><p class="point font-point">INSCENT의 당신을 위한 추천 향수 입니다 !</p></div>
           <div class="ai">
             <ul>
               <li><a href="#"><img src="./img/ai-last.jpg" alt="">
@@ -180,12 +180,10 @@
 
   <!-- Initialize Swiper -->
   <script>
-    var swiper = new Swiper(".mySwiper", {
+    var swiper1 = new Swiper(".aicommand", {
       pagination: {
         el: ".swiper-pagination",
       },
     });
   </script>
 </body>
-
-</html>
