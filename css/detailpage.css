@@ -18,7 +18,6 @@ html {
     /* max-width: 100%; */
     width: 100%;
     /* aspect-ratio: 1/1; */
-    border: 1px solid var(--slate-gray-300);
     margin-top: 50px;
 }
 .tag{
@@ -117,6 +116,7 @@ html {
     left: 0;
     top: 0;
     z-index: 1000;
+    padding-top: 2px;
     background: #fff;
 }
 .main__top figure{
@@ -157,21 +157,32 @@ html {
     border-bottom: 1px solid var(--slate-gray-300);
     align-items: center;
 }
+
 .information__write {
-    padding: 20px 0;
+    max-height: 0;
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
 }
 .choice li{
-    max-height: 40px;
     overflow: hidden;
 }
-.choice li.active{
-    max-height: 300px;
+.choice li.active .information__write{
+    max-height: 500px;
+    padding: 20px 0 ;
+     transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
 }
 
 .star{
     display: flex;
     align-items: center;
     margin-bottom: 60px;
+    gap: 10px;
+}
+.star>figure>img{
+     width: 20px;
+     margin-top: 0; 
 }
 .star p{
     font-size: 31px;
@@ -193,14 +204,17 @@ html {
 }
 
 .review__left{
-    width: 566px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 .review__left p {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  margin-bottom: 6px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    /* margin-bottom: 6px; */
 }
 .review__left__1{
     display: flex;
@@ -215,19 +229,21 @@ html {
     font-size: 13px;
     color: var(--slate-gray-600);
 }
+.review__left__1>figure{
+    display: flex;
+}
+.review__left__1>figure>img{
+    width: 20px; 
+    margin-top: 0;
+}
 .review__left__2 figure{
     display: flex;
     align-items: center;
     gap: 10px;
 }
-
-.head{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    background-color: aquamarine;
+.review__left__2>figure>a>img{
+    margin-top: 0;
+    width: auto;
 }
 
 .top__left__space{
@@ -259,11 +275,11 @@ html {
 }
 
 .tag {
-    margin-top: 108px;  
+    margin-top: 40px;
 }
 .tag span {
-    width: 90px;
-    height: 30px;
+    width: auto;
+    height: auto;
 }
 .title {
     margin-bottom: 60px;
@@ -294,7 +310,9 @@ html {
     /* width: 950px; */
 }
 .top__right__space{
-    position:initial;
+    flex: 1;
+    padding: 0;
+    position: initial;
 }
 .product__info {
     /* width: 952px; */
@@ -302,4 +320,83 @@ html {
 .bottom__space {
     /* width: 952px; */
 }
+/* 1024px일때 화면 중앙에 상세페이지 이미지 배치 */
+.middle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200%;
+    position: relative;
+    z-index: 10;
+}
+.middle figure img{
+    max-width: 100%;
+    height: auto;
+}
+.main__top {
+    display: none;
+}
+.bottom__space {
+    /* margin-left: -50%; */
+    /* margin-right: -50%; */
+    width: 200%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* text-align: center; */
+    /* position: relative; */
+    z-index: 5;
+}
+.star>figure>img {
+    width: 20px;
+    margin-top: 0;
+}
+.review__left__1>figure>img{
+    width: 20px;
+    margin-top: 0;
+}
+}
+
+@media (max-width:768px){
+    .top__space{
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+     .top__right__space{
+        order: 3;
+        width: 100%;
+        padding: 0 10px;
+        position: initial;
+        height: auto;
+    }
+    .top__left__space{
+        order: 1;
+        width: 100%;
+        padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    .top__left__space > figure{
+        order: -1;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .top__left__space > section{
+        order: 1;
+        width: 100%;
+    }
+    .top__left__space .middle, .top__left__space .bottom__space{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    align-items: flex-start;
+    text-align: left;
+}
+    .top__left__space .middle{
+        order: 1;
+    }
+    .top__left__space .bottom__space{
+        order: 2;
+    }
 }
