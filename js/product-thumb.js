@@ -849,17 +849,17 @@ const thumbList = [
     { size: "50ml", price: 60000 }
   ]
 },
-{
-  brand: "Aesop",
-  name: "이솝 올루스 콤팩트 룸 스프레이",
-  category: "ETC",
-  image: "./img/product-list/new-thumb/etc/new7-aesop-olous-compact-roomspray-50.jpg",
-  tags: { scent: "프레시", mood: "에너제틱한", lasting: "가볍고 은은하게" },
-  rating: "-",
-  variants: [
-    { size: "50ml", price: 53000 }
-  ]
-}
+// {
+//   brand: "Aesop",
+//   name: "이솝 올루스 콤팩트 룸 스프레이",
+//   category: "ETC",
+//   image: "./img/product-list/new-thumb/etc/new7-aesop-olous-compact-roomspray-50.jpg",
+//   tags: { scent: "프레시", mood: "에너제틱한", lasting: "가볍고 은은하게" },
+//   rating: "-",
+//   variants: [
+//     { size: "50ml", price: 53000 }
+//   ]
+// }
 
 
 
