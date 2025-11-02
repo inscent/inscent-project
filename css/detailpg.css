@@ -1,0 +1,554 @@
+/* =============== 0. 초기값 & 공통 =============== */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Pretendard, sans-serif;
+  color: #111;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 아이콘/별은 커지지 않도록 예외 처리 */
+.review__page img[alt*="star"],
+.review__page img[alt*="thumb"],
+.review__page img[alt*="엄지척 아이콘"]
+.review__page img[alt*="엄지다운 아이콘"]{
+  max-width: none;
+  width: auto;
+  height: auto;
+}
+
+/* =============== 1. 상단 전체 레이아웃 =============== */
+.detailpage {
+    /* width: 100%; */
+    /* max-width: 1200px; */
+    /* margin: 0 auto; */
+    padding-top: 40px;
+}
+
+.top__space {
+  display: flex;
+  gap: 2.7rem;
+  align-items: flex-start;
+}
+
+/* =============== 2. 왼쪽 상품 이미지 영역 =============== */
+.top__left__space {
+    width: 60%;
+    padding-right: 1rem;
+}
+.top__left__space figure img {
+  width: 100%;
+  border: 1px solid var(--slate-gray-300);
+  margin-top: 50px;
+}
+
+/* =============== 3. 오른쪽 주문 패널 (PC 고정) =============== */
+.top__right__space {
+  width: 40%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  padding: 2rem 3rem;
+  overflow-y: auto;
+  background-color: #fff;
+  border-left: 1px solid var(--slate-gray-200);
+}
+
+/* =============== 4. 태그 (향수 특성) =============== */
+.tag {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    margin-bottom: 58px;
+}
+.tag span {
+  background-color: var(--slate-gray-100);
+  color: var(--slate-gray-600);
+  padding: 0.25rem 1rem;
+  font-size: 0.8rem;
+  display: flex;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =============== 5. 상품 제목/브랜드/가격 영역 =============== */
+.title {
+  margin-bottom: 60px;
+}
+.title p:nth-of-type(1) {
+  color: var(--slate-gray-500);
+}
+.title p:nth-of-type(2) {
+  font-size: 31px;
+  font-weight: 600;
+  margin-bottom: 70px;
+}
+.title p:nth-of-type(3) {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* =============== 6. 수량 선택 영역 ( - 1 + ) =============== */
+.upanddown {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.upanddown span {
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--slate-gray-300);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* =============== 7. 옵션 선택 (Select Box) =============== */
+.choose {
+  margin-bottom: 30px;
+}
+.choose select {
+  width: 100%;
+  height: 34px;
+  padding: 4px 8px;
+  font-size: 1rem;
+  border: 1px solid var(--slate-gray-300);
+  background-color: #fff;
+}
+
+/* =============== 8. 혜택/배송비/총금액 영역 =============== */
+.cost {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 120px;
+}
+.cost__left {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--slate-gray-600);
+}
+.cost__left ul {
+  display: flex;
+  justify-content: space-between;
+}
+.cost__right ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: right;
+}
+
+/* =============== 9. 버튼 영역 (장바구니 / 구매하기) =============== */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.buttons a {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  color: #111;
+  text-decoration: none;
+  border: 1px solid var(--slate-gray-300);
+}
+.buttons a:nth-of-type(2) {
+  background-color: var(--slate-gray-300);
+  color: #111;
+}
+
+/* =============== 10. 탭 전체 영역 (상세정보 / 제품안내 / 구매안내 / 리뷰) =============== */
+.tab-all {
+    width: 60%;
+    margin-top: 60px;
+    padding-right: 1rem;
+}
+
+/* 탭 메뉴 (상단 고정) */
+.main__top {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 900;
+  background-color: #fff;
+  margin-bottom: 80px;
+}
+.main__top ul {
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 1px solid var(--slate-gray-200);
+  margin-top: 20px;
+}
+.main__top ul li {
+  height: 48px;
+  line-height: 48px;
+  cursor: pointer;
+}
+
+/* =============== 11. 상세 이미지 영역 =============== */
+.middle figure img {
+  width: 100%;
+  display: block;
+}
+
+/* =============== 12. '제품안내', '구매안내' 제목 라인 =============== */
+.bottom__space > p {
+  height: 58px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--slate-gray-300);
+  margin-bottom: 60px;
+  font-weight: 600;
+}
+
+/* =============== 13. 제품 상세 설명 영역 (회색 박스) =============== */
+.product__info {
+  background-color: var(--slate-gray-100);
+  margin-bottom: 100px;
+  padding: 20px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* =============== 14. 구매 안내 (아코디언) =============== */
+.about__product {
+  margin-bottom: 100px;
+}
+.choice li {
+  border-bottom: 1px solid var(--slate-gray-300);
+  max-height: 40px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.choice li.active {
+  max-height: 300px;
+}
+.information {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  cursor: pointer;
+}
+.information img {
+  width: 16px;
+  height: 16px;
+}
+.information__write {
+  padding: 16px 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--slate-gray-600);
+}
+
+/* =============== 15. 리뷰 섹션 별점 영역 =============== */
+.star {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 60px;
+}
+.star figure {
+  display: flex;
+  gap: 4px;
+}
+.star img {
+  width: 20px;
+  height: 20px;
+}
+.star p {
+  font-size: 31px;
+  font-weight: 600;
+}
+
+/* =============== 16. 리뷰 전체 리스트 =============== */
+.review__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin-bottom: 6rem;
+}
+
+/* 리뷰 카드 */
+.review__page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  border: 1px solid var(--slate-gray-300);
+  border-radius: 10px;
+  padding: 40px;
+}
+
+/* 리뷰 텍스트 영역 */
+.review__left {
+  flex: 1;
+  width: auto;
+}
+
+/* 리뷰 본문 텍스트 말줄임 처리 */
+.review__left p {
+  margin-bottom: 6px;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* 닉네임 + 별점 + 날짜 */
+.review__left__1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.review__left__1 figure {
+  display: flex;
+  gap: 4px;
+}
+.review__left__1 img {
+  width: 16px;
+  height: 16px;
+}
+.review__left__1 p:nth-of-type(1) {
+  font-size: 1rem;
+}
+.review__left__1 p:nth-of-type(2) {
+  font-size: 13px;
+  color: var(--slate-gray-600);
+}
+
+/* 도움돼요 / 안돼요 버튼 */
+.review__left__2 figure {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.review__left__2 img {
+  width: 18px;
+  height: 18px;
+}
+
+/* 리뷰 이미지 */
+.review-img{
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+}
+/* =============== 17. (PC 기본) 모바일 전용 요소는 숨김 =============== */
+.mobile-buy-bar {
+  display: none;
+}
+.sheet {
+  display: none;
+}
+
+/* =============== 18. 바텀시트 구조 (CSS-only, :target 방식) =============== */
+/* 시트 전체 레이어 */
+.sheet {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: 1100;
+}
+
+/* 시트가 활성화됐을 때 */
+.sheet:target {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+/* 어두운 뒷배경 */
+.sheet-backdrop {
+  position: absolute;
+  inset: 0;
+  display: block;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* 아래에서 올라오는 패널 */
+.sheet-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  max-height: 85vh; /* 기존 변수 --sheet-max-h 제거하고 직접 지정 */
+  background: #fff;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.2);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+/* :target 상태일 때 패널 보이게 */
+.sheet:target .sheet-panel {
+  transform: translateY(0);
+}
+
+/* 상단 손잡이 */
+.sheet-handle {
+  width: 48px;
+  height: 5px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  margin: 10px auto 6px;
+}
+
+/* 헤더 (타이틀 + 닫기 버튼) */
+.sheet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 16px 10px;
+  border-bottom: 1px solid var(--slate-gray-200);
+}
+.sheet-header strong {
+  font-size: 1rem;
+}
+.sheet-close {
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 1;
+  padding: 6px;
+  color: #111;
+}
+
+/* 패널 내부 스크롤 부분 */
+.sheet-body {
+  padding: 16px;
+  overflow-y: auto;
+}
+
+/* =============== 19. 모바일 하단 고정 버튼바 =============== */
+.mobile-buy-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;  /* 모바일에서만 켜짐 */
+  background: #fff;
+  border-top: 1px solid var(--slate-gray-300);
+  padding: 10px;
+  z-index: 1000;
+}
+
+.mobile-buy-bar .btn-up {
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 8px;
+  background: #eee;
+  margin-right: 8px;
+}
+.mobile-buy-bar .order-btn {
+  display: block;
+  flex: 1;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  background: #111;
+  color: #fff;
+  border: 1px solid #111;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* =============== 20. 반응형 (모바일 768px 이하) =============== */
+@media (max-width: 768px) {
+/* 기존구매버튼 display:none */
+.buttons {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+}
+  /* 하단 고정바 / 바텀시트 활성화 */
+  .mobile-buy-bar {
+    display: flex;
+  }
+  .sheet {
+    display: block;
+  }
+
+  /* 모바일에서 우측 주문 패널은 고정 해제 */
+  .top__right__space {
+    position: static;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    padding: 0;
+    margin-top: 2rem;
+  }
+
+  .top__space {
+    flex-direction: column;
+  }
+  .top__left__space {
+    width: 100%;
+  }
+
+  /* 탭/상세 영역 전체 풀 너비 사용 */
+  .tab-all {
+    width: 100%;
+  }
+
+  /* 바텀시트 내에서는 태그, 큰 제목 제거 */
+  .sheet-panel .tag {
+    display: none;
+  }
+  .sheet-panel .title {
+    display: none;
+  }
+
+  /* 수량 영역 간격 정리 */
+  .sheet-panel .upanddown {
+    margin-top: 1rem;
+  }
+
+  /* 바텀시트 안의 버튼은 가로 배치 */
+  .sheet-panel .buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .sheet-panel .buttons a {
+    flex: 1;
+  }
+
+  /* 리뷰 카드 모바일에서 세로 정렬 */
+  .review__page {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  /* 본문 아래 여백(고정바 높이만큼) */
+  body {
+    padding-bottom: 70px;
+  }
+}
+
+/* =============== 21. 태블릿 대응 (1440px 이하) =============== */
+@media (max-width: 1440px) {
+  .review__page {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
