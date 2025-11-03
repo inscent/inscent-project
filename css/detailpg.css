@@ -198,6 +198,31 @@ img {
   cursor: pointer;
 }
 
+.information{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--slate-gray-300);
+    align-items: center;
+}
+
+.information__write {
+    max-height: 0;
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+}
+.choice li{
+    overflow: hidden;
+}
+.choice li.active .information__write{
+    max-height: 500px;
+    padding: 20px 0 ;
+     transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+}
+
+
+
 /* =============== 11. 상세 이미지 영역 =============== */
 .middle figure img {
   width: 100%;
