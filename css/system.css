@@ -1,4 +1,8 @@
 @media (min-width:1920px) {
+    html{
+        font-size: var(--basic-font-pc);
+        line-height: ;
+    }
     .wide-frame, .footer-frame{
         max-width: 1920px;
         margin:0 auto ;
@@ -112,6 +116,9 @@
         margin: 0 3.75rem;
     }
     @media (max-width:1024px){
+        html{
+            font-size: var(--basic-font-tab);
+        }
         .common-frame {
         width: auto;
         margin: 0 2rem;
@@ -119,6 +126,9 @@
     }
 
     @media (max-width:768px){
+        html{
+            font-size: var(--basic-font-mobile);
+        }
         .common-frame{
         width: auto;
         margin: 0 1rem;
