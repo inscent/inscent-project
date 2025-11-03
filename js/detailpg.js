@@ -33,13 +33,35 @@ document.addEventListener('DOMContentLoaded', () => {
     mainImg.src = PRODUCT.image;
     mainImg.alt = `${PRODUCT.brand} ${PRODUCT.name} 상세 이미지`;
   }
-  const detailImg = $('.tab-all .middle figure img');
-  if (detailImg && PRODUCT.image) {
-    // 상세 컨텐츠 이미지도 일단 같은 이미지로 채움 (필요시 별도 detail 이미지 사용)
+// 상세 이미지가 있으면 그걸 쓰고, 없으면 기존 이미지 사용
+const detailImg = $('.tab-all .middle figure img');
+if (detailImg) {
+  const detail = PRODUCT.detailImages; // 문자열 or 배열 가능
+  
+  // detailImages가 "문자열"이면 그대로 넣고, 배열이면 첫 번째 이미지 사용
+  if (detail) {
+    if (Array.isArray(detail)) {
+      detailImg.src = detail[0]; 
+    } else {
+      detailImg.src = detail; // 문자열일 경우 그대로
+    }
+  } else {
+    // detailImages가 없으면 기존처럼 메인 이미지 사용
     detailImg.src = PRODUCT.image;
-    detailImg.alt = `${PRODUCT.brand} ${PRODUCT.name} 상세 이미지`;
   }
 
+  detailImg.alt = `${PRODUCT.brand} ${PRODUCT.name} 상세 이미지`;
+}
+
+// 제품안내 주입: .product__info 안에 info(문단) → 없으면 specs(표) → 둘 다 없으면 유지
+const infoBox = document.querySelector('.product__info');
+if (infoBox) {
+  if (PRODUCT.info) {
+    infoBox.innerHTML = PRODUCT.info
+      .trim()
+      .replace(/\n/g, '<br>'); // 줄바꿈 유지
+  } 
+}
   // 우측 패널 + 바텀시트: 두 스코프에 동일 로직 적용
   const scopes = [
     document.querySelector('.top__right__space'),
@@ -174,7 +196,6 @@ function initOrderInteractions(scope) {
     });
   }
 }
-
 // ---------------------------
 // 4) 렌더(사이즈/수량/총액 업데이트)
 function renderOrder(scope) {
