@@ -659,7 +659,7 @@ const detailList = [
   brand: "Acqua Di Parma",
   name: "아쿠아 디 파르마 핸드 앤 바디 로션 부옹조르노",
   category: "BODY",
-  image: "./img/product-list/new-detail/body/new2-acqua-di-parma-buongiorno-hand-body-lotion.jpg",
+  image: "./img/product-list/new-detail/body/new2-acquadiparma-buongiorno-hand-body-lotion.jpg",
   tags: { scent: "프레시", mood: "에너제틱한", lasting: "가볍고 은은하게" },
   rating: "-",
   variants: [
@@ -670,7 +670,7 @@ const detailList = [
   brand: "Jo Malone",
   name: "조말론 라임 바실 앤 만다린 바디 앤 핸드 로션",
   category: "BODY",
-  image: "./img/product-list/new-detail/body/new3-jo-malone-lime-basil-mandarin-body-hand-lotion.jpg",
+  image: "./img/product-list/new-detail/body/new3-jomalone-lime-basil-mandarin-body-hand-lotion.jpg",
   tags: { scent: "프레시", mood: "에너제틱한", lasting: "가볍고 은은하게" },
   rating: "-",
   variants: [
