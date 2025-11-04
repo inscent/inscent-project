@@ -124,9 +124,9 @@ header.scrolled {
 }
 .header__all__inner {
     padding-top: 1rem;
-    padding-left: 14.5rem;
+    /* padding-left: 14.5rem;    */
     display: flex;
-    gap: 2.8rem;
+    gap: 2rem;
     height: 233px;
 }
 .header__all__inner>.all__dep1{
@@ -137,6 +137,7 @@ header.scrolled {
     overflow: hidden;
     transition: all 0.6s ease 0s;
     z-index: 10000;
+    text-align: center;
 }
 .header__all__inner>.all__dep1>li>a:hover{
     color: var(--oat-600);
@@ -146,6 +147,27 @@ header.scrolled {
 }
 .gnb__container .common-frame{
     position: relative;
+}
+.all__1{
+    margin-left: 12px;
+}
+.all__2{
+    margin-left: 15px;
+}
+.all__3{
+    margin-left: 7px;
+}
+.all__4{
+    margin-left: 20px;
+}
+.all__5{
+    margin-left: 18px;
+}
+.all__6{
+    margin-left: 10px;
+}
+.all__7{
+    margin-left: 8px;
 }
 
 

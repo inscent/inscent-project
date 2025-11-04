@@ -145,6 +145,36 @@ document.addEventListener("DOMContentLoaded", () => {
     if (gnb && allInner) {
         allInner.style.paddingLeft = gnb.getBoundingClientRect().left + "px";
     }
+
+
+    // header의 backgroundcolor가 .header__all__inner(전체메뉴)에 마우스가 올려져있는동안 파란색으로 고정됨
+    // 1. 마우스가 .header__all에 진입하면 header에 scrolled 클래스 추가 (배경색 고정)
+    menuAll.addEventListener('mouseenter', () => {
+        // 이미 all 메뉴가 열려있든 닫혀있든 상관없이 배경색 유지
+        header.classList.add("scrolled");
+    });
+
+    // 2. 마우스가 .header__all에서 벗어나면 원래의 닫힘 로직 수행 (색상 해제 로직 포함)
+    [menuAll, allInner].forEach(el => {
+        el.addEventListener('mouseleave', () => {
+            if (menuAll.classList.contains('active')) {
+                // all 메뉴가 열려있었다면 닫습니다.
+                menuAll.classList.remove('active');
+                allDep1.forEach((menu) => menu.classList.remove("active"));
+                
+                // GNB 메뉴도 닫혀있고, 스크롤도 0일 때만 scrolled 클래스를 해제
+                if (!gnbContainer.classList.contains("on") && window.scrollY === 0) { 
+                    header.classList.remove("scrolled");
+                }
+            } else if (!gnbContainer.classList.contains("on") && window.scrollY === 0) {
+                 // all 메뉴는 닫혀있지만, 마우스 오버로 잠깐 scrolled가 됐을 때 해제
+                 header.classList.remove("scrolled");
+            }
+        });
+    });
+
+
+
 });
 
 
@@ -174,51 +204,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-   function getBrightness(r, g, b) {
-  return (r * 299 + g * 587 + b * 114) / 1000;
-}
+// function getBrightness(r, g, b) {
+//   return (r * 299 + g * 587 + b * 114) / 1000;
+// }
 
-function isBrightColor(rgbString) {
-  const [r, g, b] = rgbString.match(/\d+/g).map(Number);
-  const brightness = getBrightness(r, g, b);
-  return brightness > 128;
-}
+// function isBrightColor(rgbString) {
+//   const [r, g, b] = rgbString.match(/\d+/g).map(Number);
+//   const brightness = getBrightness(r, g, b);
+//   return brightness > 128;
+// }
 
 function checkBackgroundBelowHeader() {
   const header = document.querySelector("header");
   const sections = document.querySelectorAll("section, div");
 
-  const headerBottom = header.getBoundingClientRect().bottom + window.scrollY;
+  const headerBottom = header.getBoundingClientRect().bottom; 
 
   let targetElement = null;
+
   sections.forEach(el => {
     const rect = el.getBoundingClientRect();
-    const top = rect.top + window.scrollY;
-    const bottom = top + rect.height;
-    if (headerBottom >= top && headerBottom < bottom) {
+    if (headerBottom >= rect.top && headerBottom < rect.bottom) {
       targetElement = el;
     }
   });
 
   if (targetElement) {
     const bgColor = window.getComputedStyle(targetElement).backgroundColor;
+    const nums = bgColor.match(/\d+/g);
+    if (!nums) return;
 
     if (isBrightColor(bgColor)) {
-      console.log("header 아래는 밝은 배경 🌞");
-      // header.style.color = "black";
-      // header.style.backgroundColor = "white";
-      header.classList.add("scrolled")
+      header.classList.add("scrolled");
     } else {
-      console.log("header 아래는 어두운 배경 🌙");
-      // header.style.color = "white";
-      // header.style.backgroundColor = "transparent";
-      header.classList.remove("scrolled")
+      header.classList.remove("scrolled");
     }
   }
 }
 
-window.addEventListener("scroll", checkBackgroundBelowHeader);
-window.addEventListener("load", checkBackgroundBelowHeader); // 첫 로드 시도 포함
+checkBackgroundBelowHeader()
+
 
 
 })
