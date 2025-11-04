@@ -19,6 +19,7 @@
  <!-- <script src="./js/thisisrealrealreal.js"></script> -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
 <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+<script src="./js/product-detail-cut.js"></script>
 <script src="./js/mainpage.js"></script>
 </head>
 <body>
@@ -27,13 +28,85 @@
  ============================================ -->
   <main>
     <!-- 메인 영상 배너 -->
-    <section class="hero-banner" aria-label="메인 영상 배너">
-      <video src="./img/hero-banner.mp4" autoplay muted loop playsinline></video>
+
+  <section class="main-banner swiper">
+  <ul class="banner-list swiper-wrapper">
+    
+    <!--  1. 영상 배너 -->
+    <li class="hero-banner swiper-slide">
+      <video autoplay loop muted playsinline>
+        <source src="./img/hero-banner.mp4" type="video/mp4">
+      </video>
       <div class="hero-text">
         <h1 class="title">A Moment Within Scent</h1>
         <p>향기 속에서 머무는 순간</p>
       </div>
-    </section>
+    </li>
+
+    <!--  2. 사진 배너 (텍스트 포함된 이미지) -->
+    <li class="hero-banner swiper-slide">
+      <img src="./img/main-banner/banner1.jpg" alt="향수 이벤트 배너 1">
+    </li>
+
+    <!--  3. 사진 배너 -->
+    <li class="hero-banner  swiper-slide">
+      <img src="./img/main-banner/banner2.jpg" alt="향수 이벤트 배너 2">
+    </li>
+
+    <!--  4. 사진 배너 -->
+    <li class="hero-banner  swiper-slide">
+      <img src="./img/main-banner/banner3.jpg" alt="향수 이벤트 배너 3">
+    </li>
+
+  </ul>
+    <!--  페이징: wrapper(ul) 밖, .main-banner 안 -->
+  <div class="swiper-pagination"></div>
+
+  <!-- (옵션) 화살표 -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</section>
+
+<section class="main-banner-tab swiper">
+  <ul class="banner-list swiper-wrapper">
+    
+    <!--  1. 영상 배너 -->
+    <li class="hero-banner swiper-slide">
+      <video autoplay loop muted playsinline>
+        <source src="./img/hero-banner.mp4" type="video/mp4">
+      </video>
+      <div class="hero-text">
+        <h1 class="title">A Moment Within Scent</h1>
+        <p>향기 속에서 머무는 순간</p>
+      </div>
+    </li>
+
+    <!--  2. 사진 배너 (텍스트 포함된 이미지) -->
+    <li class="hero-banner swiper-slide">
+      <img src="./img/main-banner/tabbanner1.jpg" alt="향수 이벤트 배너 1">
+    </li>
+
+    <!--  3. 사진 배너 -->
+    <li class="hero-banner  swiper-slide">
+      <img src="./img/main-banner/tabbanner1.jpg" alt="향수 이벤트 배너 2">
+    </li>
+
+    <!--  4. 사진 배너 -->
+    <li class="hero-banner  swiper-slide">
+      <img src="./img/main-banner/tabbanner3.jpg" alt="향수 이벤트 배너 3">
+    </li>
+
+  </ul>
+    <!--  페이징: wrapper(ul) 밖, .main-banner 안 -->
+  <div class="swiper-pagination"></div>
+
+  <!-- (옵션) 화살표 -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+</section>
+
+
 <div class="wide-frame">
     <!-- 신상품 섹션 -->
     <section class="main-new common-frame">
@@ -146,7 +219,7 @@
 </section>
 
     <!-- 배너 영역 -->
-    <section class="main-banner ">
+    <section class="small-banner ">
       <img src="./img/main-banner01.jpg" alt="">
     </section>
 
@@ -317,4 +390,30 @@
     </div>
   </footer>
 </body>
+<script>
+  const heroPC = new Swiper('.main-banner', {
+    direction: 'horizontal',
+    loop: true,
+    autoplay: { delay: 3000, disableOnInteraction: false },
+    pagination: { el: '.main-banner .swiper-pagination', clickable: true },
+    navigation: {
+      nextEl: '.main-banner .swiper-button-next',
+      prevEl: '.main-banner .swiper-button-prev'
+    }
+  });
+
+  const heroTAB = new Swiper('.main-banner-tab', {
+    direction: 'horizontal',
+    loop: true,
+    autoplay: { delay: 3000, disableOnInteraction: false },
+    pagination: { el: '.main-banner-tab .swiper-pagination', clickable: true },
+    navigation: {
+      nextEl: '.main-banner-tab .swiper-button-next',
+      prevEl: '.main-banner-tab .swiper-button-prev'
+    }
+  });
+</script>
+
+
 </html>
+

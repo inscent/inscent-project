@@ -1,7 +1,7 @@
 @media (min-width:1920px) {
     html{
         font-size: var(--basic-font-pc);
-        line-height: ;
+        /* line-height: 1.2; */
     }
     .wide-frame, .footer-frame{
         max-width: 1920px;

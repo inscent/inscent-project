@@ -1,14 +1,33 @@
 // ---------------------------
-function getProductIndex(max = 0) {
+// 쿼리로 상세 상품 선택 (sid 우선, 없으면 pid/id)
+function getProductFromQuery(list) {
   const params = new URLSearchParams(location.search);
-  // pid가 우선, 없으면 id도 허용
+
+  // 1) sid = encodeURIComponent(`${brand}|${name}`)
+  const sid = params.get('sid');
+  if (sid) {
+    const key = decodeURIComponent(sid);
+    const foundIndex = list.findIndex(
+      x => `${x.brand}|${x.name}` === key
+    );
+    if (foundIndex !== -1) {
+      return { product: list[foundIndex], index: foundIndex };
+    }
+  }
+
+  // 2) 백업: pid 또는 id (숫자 인덱스)
   const raw = params.get('pid') ?? params.get('id');
   const idx = parseInt(raw, 10);
-  return (!Number.isNaN(idx) && idx >= 0 && idx < max) ? idx : 0;
+  if (!Number.isNaN(idx) && idx >= 0 && idx < list.length) {
+    return { product: list[idx], index: idx };
+  }
+
+  // 3) 최후: 0번
+  return { product: list[0], index: 0 };
 }
 
-const PRODUCT_INDEX = getProductIndex(detailList.length);
-const PRODUCT = detailList[PRODUCT_INDEX];
+const { product: PRODUCT, index: PRODUCT_INDEX } = getProductFromQuery(detailList);
+
 
 
 // KRW 통화 포맷
