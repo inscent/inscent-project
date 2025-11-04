@@ -1,9 +1,14 @@
 /* 레이아웃 */
-.p-lst-wrap h1 {
+.banner{
+  background: url(../img/product-list/background.jpg) center/ cover no-repeat;
+  height: 270px;
+
+  margin-bottom: 6rem;
+}
+.banner h1 {
     text-align: center;
-    margin-bottom: 6rem;
-    margin-top: 6rem;
-    font-size: 2.45rem;
+    padding-top: 6rem;
+    font-size: 1.6rem;
 }
 .p-wrap {
     display: grid;
@@ -49,10 +54,10 @@
 /* 공통 버튼 스타일 */
 .btn-reset, .btn-view {
     /* box-sizing: border-box; */
-    width: auto;
-    padding: 0.3rem 0.5rem;
+    width: 100%;
+    padding: 0.3rem;
     border: 1px solid var(--slate-gray-200);
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     cursor: pointer;
 }
 
@@ -78,15 +83,15 @@
 
 /* 아코디언 헤드 (버튼) */
 .acc-head {
-  width: 100%;
-  text-align: left;
-  background: none;
-  border: 0;
-  padding: 0.75rem 0;
-  font-size: 1rem;
-  color: var(--slate-gray-900);
-  position: relative;
-  cursor: pointer;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: 0;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    color: var(--slate-gray-900);
+    position: relative;
+    cursor: pointer;
 }
 
 /* + 아이콘 (가로, 세로 막대) */
@@ -136,7 +141,7 @@
 
 /* 기본 태그 버튼 */
 .tag {
-    padding: 0.3rem 0.6rem;
+    padding: 0.2rem 0.5rem;
     border-radius: 0.3rem;
     /* border: 1px solid var(--slate-gray-300); */
     background: var(--slate-gray-100);
@@ -213,14 +218,14 @@
 
 /* 상품명 */
 .meta .name {
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   font-weight: 500;
   margin: 0.25rem 0;
 }
 
 /* 가격 */
 .meta .price {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: #111;
 }
@@ -252,18 +257,18 @@
     width: 100%;
     margin-bottom: 3rem;
 }
-.p-cate dt{
+.p-cate dt {
     /* box-sizing: border-box; */
-    font-size: 1.95rem;
+    font-size: 1.55rem;
     margin-bottom: 2rem;
     padding: 1rem 1rem 1rem 0;
     border-bottom: 1px solid var(--slate-gray-200);
 }
 .p-cate dd {
     color: var(--slate-gray-500);
-    font-size: 1.55rem;
-    padding: 1rem;
-  cursor: pointer; /* 손가락 모양 커서 */
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    cursor: pointer;
 }
 
 /* hover 시 포인트 컬러 */
