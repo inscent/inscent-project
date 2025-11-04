@@ -1,0 +1,215 @@
+
+/* @media (min-width:1920px){
+    body{
+        width: 1920px;
+        margin: 0 auto;
+    }
+} */
+
+html{
+    font-size: 20px;
+}
+.inscenttalk__main,
+.common-frame {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  box-sizing: border-box;
+}
+
+.top__bg{
+    background: url(../img/inscenttalk-main-1.jpg) 50% 50% / cover;
+    /* margin-bottom: 6.15rem; */
+    height: 13.9rem;
+    margin: 0 auto 6.15rem;
+}
+
+/* 제목 영역 */
+.title__title {
+  text-align: center;
+  padding-top: 6rem;
+  /* margin: 120px 0 88px 0; */
+}
+.title__title .point {
+  font-size: 1.6rem;
+}
+
+.inscenttalk__main .btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2.25rem;
+}
+.inscenttalk__main .btn a{
+    padding: 0.25rem 1.5rem;
+    border: 1px solid var(--slate-gray-600);
+}
+
+.middle__space {
+    display: flex;
+    justify-content: space-between;
+}
+
+.middle__left ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    width: 6.35rem;
+}
+
+.middle__right__king {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.middle__right {
+    background-color: var(--slate-gray-0);
+    border-radius: 0.25rem;
+    display: flex;
+    margin-bottom: 2rem;
+    justify-content: space-between;
+}
+.middle__right__left {
+    height: 18.75rem;
+    margin: 1.4rem 2.4rem;
+    display: flex;
+    flex-direction: column;
+}
+.middle__right__left .inside__btn {
+    margin-bottom: 1.4rem;
+    font-size: 0.65rem;
+}
+.middle__right__left .inside__btn a {
+    padding: 0.25rem 1rem;
+    background-color: white;
+    border: 1px solid var(--slate-gray-600);
+    border-radius: 0.25rem;
+}
+.talk__title{
+    font-size: 1.55rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.talk__write {
+    margin-bottom: 2.4rem;
+    width: auto;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+}
+.talk__number{
+    font-size: 0.8rem;
+}
+.middle__right__right{
+    display: flex;
+    aspect-ratio: 1/1;
+    justify-content: center;
+    align-items: center;
+}
+.middle__right__right img{
+    margin-right: 2.4rem;
+}
+    .mobile__fake__btn{
+        display: none;
+    }
+
+
+@media (max-width:1024px){
+    html{
+        font-size: 18px;
+    }
+    .mobile__fake__btn{
+        display: none;
+    }
+}
+
+
+
+
+@media (max-width:768px){
+    html{
+        font-size: 14px;
+    }
+    .title__title {
+    text-align: center;
+    padding-top: 6.79rem;
+    /* margin: 120px 0 88px 0; */
+}
+    .top__bg {
+    background: url(../img/inscenttalk-main-1.jpg) 50% 50% / cover;
+    margin-bottom: 0.79rem;
+    height: 10.93rem;
+}
+    .middle__space{
+        display: block;
+    }
+
+    .middle__left ul {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 3.07rem;
+}
+    .middle__right {
+    margin-bottom: 1.43rem;
+}
+    .middle__right__right {
+    display: none;
+}
+    .middle__right__left {
+    height: 7.79rem;
+    margin: 0 0;
+}
+    .talk__title {
+    font-size: 1rem;
+}
+    .talk__write{
+        font-size: 0.79rem;
+    }
+    .middle__right__left .inside__btn a {
+    padding: 0 0.36rem;
+}
+    .talk__write {
+    margin-bottom: 0;
+    width: auto;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.middle__right__left .inside__btn {
+    margin-bottom: 0;
+    font-size: 10px;
+}
+    .talk__title {
+    margin-bottom: 0;
+}   
+    .talk__number {
+    font-size: 0.71rem;
+}
+    .middle__right__left {
+    display: flex;
+    justify-content: center;
+    gap: 0.36rem;
+}
+    .btn a{
+        display: none;
+}
+    .inscenttalk__main .btn {
+    margin-bottom: 0;
+}
+    .middle__right:nth-of-type(6){
+    margin-bottom: 4.57rem;
+}
+    .mobile__fake__btn{
+        font-size: 0.71rem;
+        display: flex;
+        flex-direction: row-reverse;
+        margin-bottom: 0.36rem;
+    }
+    .mobile__fake__btn a{
+        padding: 0 0.71rem;
+        border: 1px solid var(--slate-gray-600);
+    }
+}
