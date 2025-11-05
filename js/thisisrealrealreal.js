@@ -204,6 +204,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+
+    // 색깔 변하는거 근데 안씀 
 // function getBrightness(r, g, b) {
 //   return (r * 299 + g * 587 + b * 114) / 1000;
 // }
@@ -214,35 +217,35 @@ document.addEventListener("DOMContentLoaded", () => {
 //   return brightness > 128;
 // }
 
-function checkBackgroundBelowHeader() {
-  const header = document.querySelector("header");
-  const sections = document.querySelectorAll("section, div");
+// function checkBackgroundBelowHeader() {
+//   const header = document.querySelector("header");
+//   const sections = document.querySelectorAll("section, div");
 
-  const headerBottom = header.getBoundingClientRect().bottom; 
+//   const headerBottom = header.getBoundingClientRect().bottom; 
 
-  let targetElement = null;
+//   let targetElement = null;
 
-  sections.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (headerBottom >= rect.top && headerBottom < rect.bottom) {
-      targetElement = el;
-    }
-  });
+//   sections.forEach(el => {
+//     const rect = el.getBoundingClientRect();
+//     if (headerBottom >= rect.top && headerBottom < rect.bottom) {
+//       targetElement = el;
+//     }
+//   });
 
-  if (targetElement) {
-    const bgColor = window.getComputedStyle(targetElement).backgroundColor;
-    const nums = bgColor.match(/\d+/g);
-    if (!nums) return;
+//   if (targetElement) {
+//     const bgColor = window.getComputedStyle(targetElement).backgroundColor;
+//     const nums = bgColor.match(/\d+/g);
+//     if (!nums) return;
 
-    if (isBrightColor(bgColor)) {
-      header.classList.add("scrolled");
-    } else {
-      header.classList.remove("scrolled");
-    }
-  }
-}
+//     if (isBrightColor(bgColor)) {
+//       header.classList.add("scrolled");
+//     } else {
+//       header.classList.remove("scrolled");
+//     }
+//   }
+// }
 
-checkBackgroundBelowHeader()
+// checkBackgroundBelowHeader()
 
 
 
