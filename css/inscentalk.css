@@ -83,7 +83,7 @@ body {
   border-radius: 50%;
   background: #DDD;
   flex: 0 0 44px;
-  background: url("../img/글쓴이사진.png");
+  /* background: url("../img/글쓴이사진.png"); */
 }
 .meta {
   color: var(--muted);
@@ -184,10 +184,10 @@ body {
   margin-top: 20px;
 }
 .comment-input {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  margin-bottom: 18px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 18px;
 }
 .avatar {
   width: 44px;
@@ -197,36 +197,37 @@ body {
   flex: 0 0 44px;
 }
 .input-box {
+  display: flex;
+  align-items: center;
   flex: 1;
-  background: var(--bubble);
   border-radius: 10px;
   padding: 12px;
+  border: 1px solid #000;
 }
 .input-box textarea {
   width: 100%;
   border: none;
   background: transparent;
   resize: vertical;
-  min-height: 64px;
+  /* min-height: 64px; */
   font-size: 20px;
   line-height: 1.6;
   outline: none;
   color: #999999;
-  font-family: var(--font-sans);
+  /* font-family: var(--font-sans); */
 }
-.input-actions {
+/* .input-actions {
   display: flex;
   justify-content: flex-end;
-  margin-top: 8px;
-}
-.input-actions button {
-  padding: 8px 14px;
-  border-radius: 8px;
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
+} */
+.inscent-btn {
+    padding: 0.5rem;
+    border: 1px solid #000;
+    border-radius: 8px;
+    width: 3.5rem;
+    color: #000;
+    cursor: pointer;
+    font-weight: 600;
 }
 
 /* 댓글 리스트 */
@@ -242,7 +243,7 @@ body {
   padding: 12px;
   border-radius: 10px;
   background: #fff;
-  border: 1px solid var(--line);
+  border-bottom: 1px solid #eee;
 }
 
 .c-avatar1{
@@ -251,7 +252,7 @@ body {
   border-radius: 50%;
   background: #CCC;
   flex: 0 0 44px;
-  background: url("../img/댓글사진1.png");
+  background: url("../img/inscenttalk/talk1/thumb01.jpg");
 }
 .c-avatar2{
   width: 44px;
@@ -259,7 +260,7 @@ body {
   border-radius: 50%;
   background: #CCC;
   flex: 0 0 44px;
-  background: url("../img/댓글사진2.png");
+  background: url("../img/inscenttalk/talk1/thumb02.jpg");
 }
 .c-avatar3{
   width: 44px;
@@ -267,7 +268,7 @@ body {
   border-radius: 50%;
   background: #CCC;
   flex: 0 0 44px;
-  background: url("../img/댓글사진3.png");
+  background: url("../img/inscenttalk/talk1/thumb03.jpg");
 }
 .c-avatar4{
   width: 44px;
@@ -275,7 +276,7 @@ body {
   border-radius: 50%;
   background: #CCC;
   flex: 0 0 44px;
-  background: url("../img/댓글사진4.png");
+  background: url("../img/inscenttalk/talk1/thumb04.jpg");
 }
 .c-avatar5{
   width: 44px;
@@ -283,7 +284,7 @@ body {
   border-radius: 50%;
   background: #CCC;
   flex: 0 0 44px;
-  background: url("../img/댓글사진5.png");
+  background: url("../img/inscenttalk/talk1/thumb05.jpg");
 }
 .c-avatar6{
   width: 44px;
@@ -291,7 +292,7 @@ body {
   border-radius: 50%;
   background: #CCC;
   flex: 0 0 44px;
-  background: url("../img/댓글사진6.png");
+  background: url("../img/inscenttalk/talk1/thumb06.jpg");
 }
 
 .c-body {
