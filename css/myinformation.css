@@ -1,0 +1,209 @@
+@media (min-width:1920px){
+    body{
+        width: 1920px;
+        margin: 0 auto;
+    }
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  box-sizing: border-box;
+}
+
+/* 공통 프레임 */
+.order-and-delivery,
+.common-frame {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  box-sizing: border-box;
+}
+
+/* 제목 영역 */
+.title__title {
+  text-align: center;
+  margin: 6rem 0 4.4px 0;
+}
+.title__title .point {
+  font-size: 1.6rem;
+}
+
+/* 메인 영역 (왼쪽 + 오른쪽) */
+.main-space {
+  display: flex;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 왼쪽 리스트 */
+.main-space .mypage__list {
+  width: 9rem;
+  flex-shrink: 0;
+  display: inline-block;
+  margin-left:0;
+}
+.main-space .right-space {
+  margin-left: 2.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.main-space .mypage__list > ul.mypage__gnb {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  border-top: 0;
+  gap: 3rem;
+  padding: 0;
+}
+.main-space .mypage__list > .mypage__gnb > li > span {
+  border: 0;
+  font-size: 1rem;
+}
+
+.main-space .mypage__gnb > li {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+.mypage__gnb > li > a {
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+}
+
+.mypage__list .mypage__gnb ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.mypage__gnb ul li a {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.inside__box__one{
+    width: auto;
+    height: 3.05rem;
+    background-color: var(--slate-gray-300);
+    display: flex;
+    align-items: center;
+    padding-left: 3rem;
+    color: white;
+}
+
+
+tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
+table tr{
+    display: flex;
+}
+
+table tr th{
+    display: flex;
+    padding-left: 3rem;
+    flex: 1;
+}
+table tr td{
+    flex: 5;
+}
+table tr td input{
+    padding: 0.15rem;
+}
+
+.info__btn {
+    display: flex;
+    justify-content: center;
+    margin-right: 9rem;
+    margin-top: 2.5rem;
+}
+.info__btn a{
+    padding: 0.25rem 1.5rem;
+    background-color:var(--slate-gray-300);
+    color: white;
+}
+
+@media (max-width:1440px){
+    html{
+        font-size: 18px;
+    }
+    .inside__box__one p{
+        font-size: 1rem;
+    }
+    tbody {
+    font-size: 0.89rem;
+}
+    .right-space table tr td{
+    flex: 4;
+}
+    .info__btn a {
+    font-size: 1rem;
+}
+}
+
+
+@media (max-width:768px){
+    html{
+        font-size: 14px;
+    }
+    tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 2.14rem;
+    margin-top: 2.14rem;
+    font-size: 1rem;
+}
+table tr td input {
+    padding: 0.21rem;
+    width: 4.29rem;
+}
+    
+    table tr th {
+    display: flex;
+    padding-left: 1.43rem;
+    flex: 1;
+}
+    .right-space table tr td {
+    flex: 3;
+}
+    .info__btn {
+    margin-right: 0;
+    font-size: 1rem;
+}
+    .inside__box__one {
+    height: 2.14rem;
+    padding-left: 0;
+    justify-content: center;
+}
+}
+
+@media (max-width:400px){
+    .right-space table tr td {
+    flex: 1;
+}
+    .inside__box__one p {
+    font-size: 1rem;
+}   
+    .info__btn a {
+    font-size: 1rem;
+}
+}
