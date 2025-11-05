@@ -1,0 +1,67 @@
+.event-title{
+    /* text-align: left; */
+  /* font-family: 'ChettaVissto'; */
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 6rem auto;
+} 
+.next-wrap{
+    
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 10rem;
+}
+.event-detail-main{
+    margin: 0 auto;
+    padding: 0 10rem;
+    width: auto;
+    /* object-fit: cover; */
+    margin-bottom: 10rem;
+}
+.event-detail-main img{
+    width: 100%;
+}
+.next-event {
+    /* margin: 0 10rem; */
+    padding: 0 10rem;
+    width: auto;
+}
+.next-event>h4{
+    padding: 3rem 0;
+    border-top: 1px solid var(--slate-gray-400);
+}
+.event-item h4{
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+}
+.mo-event{display: none;}
+/* 탭 */
+@media (max-width: 1024px){
+.event-detail-main{
+    padding: 0 6rem;
+    margin-bottom: 10rem;
+}
+.next-event {
+    /* margin: 0 10rem; */
+    padding: 0 6rem;
+}
+.pc-event{display: none;}
+.mo-event{display: block;}
+
+}
+/* 모바일 */
+@media (max-width: 768px){
+    .event-detail-main{
+    padding: 0;
+}
+.next-event {
+    padding: 0;
+}
+.next-wrap {
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+}
+
+}

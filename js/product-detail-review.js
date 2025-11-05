@@ -1,6 +1,6 @@
 // product-detail-review.js (예시)
 const reviewData = {
-  "1": [ // id=1 제품의 리뷰들
+  "0": [ // id=0 제품의 리뷰들
     {
       user: "gidtnwhgdk1212",
       rating: 5.0,
@@ -24,38 +24,42 @@ const reviewData = {
     }
   ],
   // 다른 상품도 이렇게 추가 가능
-  "2": [],
+  "1": [],
 };
 
 document.addEventListener('DOMContentLoaded', () => {
   const params = new URLSearchParams(location.search);
-  const productId = params.get('id'); // 주소의 id값
-  const reviews = reviewData[productId] || []; // 리뷰 없으면 빈 배열
+
+  const pid = params.get('pid'); // 상품 배열용 index
+  const id  = params.get('id');  // 실제 상품 고유 id
+
+  // ① pid 기반으로 리뷰 가져오기 (기존 방식)
+  let reviews = reviewData[pid] || [];
+
+  // ② id 기반으로 리뷰 가져오기 (둘 다 가능하도록)
+  if (id && reviewData[id]) {
+    reviews = reviewData[id];
+  }
 
   const reviewWrap = document.querySelector('.review__wrap');
   if (!reviewWrap) return;
 
-  // 기존 내용 지우고 새로 채우기
-  reviewWrap.innerHTML = reviews.map(r => `
-    <div class="review__page">
-      <div class="review__left">
-        <p>${r.user}</p>
-        <div class="review__left__1">
-          <figure>
-            ${'★'.repeat(Math.round(r.rating))}${'☆'.repeat(5 - Math.round(r.rating))}
-          </figure>
-          <p>${r.rating.toFixed(1)}</p>
-          <p>작성일 ${r.date}</p>
+  reviewWrap.innerHTML = reviews.length > 0 ? 
+    reviews.map(r => `
+      <div class="review__page">
+        <div class="review__left">
+          <p>${r.user}</p>
+          <div class="review__left__1">
+            <figure>
+              ${'★'.repeat(Math.round(r.rating))}${'☆'.repeat(5 - Math.round(r.rating))}
+            </figure>
+            <p>${r.rating.toFixed(1)}</p>
+            <p>작성일 ${r.date}</p>
+          </div>
+          <p>${r.text}</p>
         </div>
-        <p>${r.text}</p>
-        <div class="review__left__2">
-          <figure>
-            <img src="./img/thumb-up.svg" alt="도움됨"><span>도움돼요</span>
-            <img src="./img/thumb-down.svg" alt="도움안됨"><span>도움안돼요</span>
-          </figure>
-        </div>
+        ${r.img ? `<img class="review-img" src="${r.img}" alt="후기 이미지">` : ''}
       </div>
-      <img class="review-img" src="${r.img}" alt="후기 이미지">
-    </div>
-  `).join('');
+    `).join('')
+  : `<p class="no-review">아직 작성된 리뷰가 없습니다.</p>`;
 });
