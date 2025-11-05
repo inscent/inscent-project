@@ -1,0 +1,609 @@
+
+:root{
+    /* basic size 1rem */
+    --basic-font-wide:22px;
+    --basic-font-pc:20px;
+    --basic-font-tab:18px;
+    --basic-font-mobile:14px;
+}
+*{margin: 0; padding: 0;}
+/* html{
+    font-size: var(--basic-font-pc);
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: var(--font-sans);
+  color:#000000;
+  -webkit-font-smoothing: antialiased;
+} */
+/* nav {
+  color: #000000;
+  font-size: var(--basic-font-pc);
+} */
+
+/* 전체 레이아웃 */
+/* .container {
+  max-width: var(--maxw);
+  margin: 40px auto;
+  padding: 0 var(--wrap-padding);
+} */
+
+/* 헤더 */
+.page-head {
+  text-align: center;
+  margin-bottom: 130px;
+}
+.page-head .inscentalk {
+  font-family: 'ChettaVissto';
+  font-size: 2.5rem;
+  color: #000000;
+  margin-bottom: 3rem;
+
+  margin-top: 6rem;
+    margin-bottom: 3rem;
+}
+.page-head nav {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  font-size: var(--basic-font-pc);
+  color: var(--muted);
+  margin-bottom: 6px;
+
+}
+.page-head nav>*{
+    padding: 0.5rem;
+
+}
+/* .top-box{
+  width: 104;
+  height: 26;
+  background-color: #999999;
+} */
+
+/* 본문 카드 */
+.article {
+  background: var(--card-bg);
+  padding: 59px;
+  box-shadow: 0 0 20px rgba(0 0 0 / 8%);
+  width: 1153px;
+  margin: 0 auto 180px;
+}
+
+/* 제목/작성자 */
+.title {
+  font-family: var(--font-sans);
+  font-size: 31px;
+  margin-bottom: 44px;
+}
+.aavatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #DDD;
+  flex: 0 0 44px;
+  background: url("../img/글쓴이사진.png");
+}
+.meta {
+  color: var(--muted);
+  font-size: 20px;
+  margin-bottom: 22px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* 게시글 내용 */
+.post-grid {
+  width: 1153px;
+  /* align-items: center; */
+}
+.post-text {
+  font-size: 20px;
+  line-height: 1.8;
+  color: #000000;
+  /* margin-bottom: 45px; */
+  margin-top: 40px;
+}
+.image-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+/* .image-card1{
+    width: 527px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+    align-items: flex-start;
+    max-width: 100%;
+    margin: 0 auto; 
+} */
+/* .image-card1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+} */
+
+/* .image-card2 {
+    width: 1153px;
+    height: 674px;
+  background: var(--bubble);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+.image-card1 img {
+  width: 100%;          /* 부모의 너비에 맞게 꽉 채움 */
+  max-width: 700px;     /* 너무 커지지 않게 제한 (원하면 조정 가능) */
+  height: auto;         /* 비율 유지하면서 자동 조절 */
+  display: block;
+
+  object-fit: cover;    /* 이미지 비율 맞게 자르기 */
+  margin: 0 auto;       /* 중앙 정렬 */
+}
+
+/* hr{
+    margin-top: 20px;
+} */
+
+/* 중앙 대표 이미지 */
+.hero {
+  margin: 34px 0;
+  text-align: center;
+}
+.hero img {
+  width: 60%;
+  max-width: 420px;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  display: block;
+  margin: 0 auto;
+}
+
+/* 좋아요 & 공유 */
+.actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.btn {
+  border: 1px solid var(--line);
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: transparent;
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+/* 댓글 입력 */
+.comments {
+  margin-top: 20px;
+}
+.comment-input {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #DDD;
+  flex: 0 0 44px;
+}
+.input-box {
+  flex: 1;
+  background: var(--bubble);
+  border-radius: 10px;
+  padding: 12px;
+}
+.input-box textarea {
+  width: 100%;
+  border: none;
+  background: transparent;
+  resize: vertical;
+  min-height: 64px;
+  font-size: 20px;
+  line-height: 1.6;
+  outline: none;
+  color: #999999;
+  font-family: var(--font-sans);
+}
+.input-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+.input-actions button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* 댓글 리스트 */
+.comment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  /* margin-bottom: 200px; */
+}
+.comment {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.c-avatar1{
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #CCC;
+  flex: 0 0 44px;
+  background: url("../img/댓글사진1.png");
+}
+.c-avatar2{
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #CCC;
+  flex: 0 0 44px;
+  background: url("../img/댓글사진2.png");
+}
+.c-avatar3{
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #CCC;
+  flex: 0 0 44px;
+  background: url("../img/댓글사진3.png");
+}
+.c-body {
+  flex: 1;
+}
+.c-meta {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.c-text {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+.c-asmall{
+  margin-top: 5px;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* 반응형 */
+/* @media (max-width: 900px){
+  .post-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .hero img {
+    width: 84%;
+  }
+  .article {
+    padding: 20px;
+  }
+  .title {
+    font-size: 22px;
+  }
+} */
+/* ===========================
+   📱 모바일 (768px 이하)
+   =========================== */
+
+/* ===========================
+   🖥️ PC (1440px 이상)
+   =========================== */
+@media (min-width: 1440px) {
+  html {
+    font-size: var(--basic-font-pc);
+  }
+
+  .article {
+    width: 1153px;
+    padding: 60px;
+  }
+
+  .page-head .inscentalk {
+    font-size: 2.5rem;
+  }
+
+  .post-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .image-card1 {
+    width: 527px;
+    height: 500px;
+    gap: 80px;
+  }
+
+  .image-card2 {
+    width: 100%;
+    height: 674px;
+  }
+
+  .post-text {
+    font-size: 20px;
+    line-height: 1.8;
+
+  }
+
+  .comment-input textarea {
+    font-size: 20px;
+  }
+}
+
+
+/* ===========================
+   💻 태블릿 (1024px 이하)
+   =========================== */
+@media (max-width: 1024px) {
+  html {
+    font-size: var(--basic-font-tab);
+  }
+
+  .container {
+    padding: 0 30px;
+  }
+
+  .page-head {
+    margin-bottom: 80px;
+  }
+
+  .page-head .inscentalk {
+    font-size: 2.2rem;
+    margin-top: 4rem;
+  }
+
+  .page-head nav {
+    gap: 1.5rem;
+    font-size: 18px;
+  }
+
+  .article {
+    width: 90%;
+    padding: 40px;
+  }
+
+  .title {
+    font-size: 26px;
+    line-height: 1.4;
+  }
+
+  .post-text {
+    font-size: 18px;
+
+  }
+
+  .post-grid {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  
+  }
+
+  .image-card1 {
+    width: 100%;
+    height: auto;
+    /* flex-wrap: wrap; */
+    gap: 30px;
+  }
+
+  .image-card1 img {
+    width: 48%;
+    height: auto;
+  }
+
+  .image-card2 {
+    width: 100%;
+    height: auto;
+  }
+
+  .actions {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .btn {
+    font-size: 16px;
+  }
+
+  .comment-input textarea {
+    font-size: 10px;
+  }
+
+  .footer-frame {
+    padding: 30px;
+  }
+}
+
+
+/* ===========================
+   📱 모바일 (768px 이하)
+   =========================== */
+@media (max-width: 768px) {
+  html {
+    font-size: var(--basic-font-mobile);
+  }
+
+  body {
+    padding: 0;
+  }
+
+  .page-head {
+    margin-bottom: 50px;
+  }
+
+  .page-head .inscentalk {
+    font-size: 1.8rem;
+    margin-top: 3rem;
+  }
+
+  .page-head nav {
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 16px;
+  }
+
+  .article {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .input-box{
+    height: 28px;
+  }
+
+  .title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .meta {
+    font-size: 14px;
+    gap: 10px;
+  }
+
+  .post-text {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .image-stack {
+    gap: 20px;
+  }
+
+  .image-card1 {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    height: auto;
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  .image-card1 img,
+  .image-card2 img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .comments {
+    margin-top: 10px;
+  }
+
+  .comment-input {
+    /* flex-direction: column; */
+    align-items: stretch;
+  }
+
+  .comment-input .avatar {
+    margin-bottom: 10px;
+  }
+
+  .comment {
+    /* flex-direction: column; */
+    gap: 8px;
+  }
+
+  .c-text {
+    font-size: 14px;
+  }
+
+  .c-asmall {
+    font-size: 12px;
+  }
+
+  
+  
+   body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  background-color: var(--oat-100);
+}
+
+/* 컨테이너 중앙 정렬 및 최대 너비 지정 */
+.container {
+  width: 100%;
+  max-width: 1200px; /* 이 부분은 네 디자인 폭에 맞게 조정 가능! */
+  margin: 0 auto;
+  padding: 0 1rem; /* 모바일에서 여백 확보 */
+  box-sizing: border-box;
+}
+
+/* 헤더와 본문, 푸터를 전부 중앙 기준으로 유지 */
+.page-head,
+.article,
+footer {
+  width: 100%;
+  max-width: 1000px;
+  /* margin: 0 auto; */
+  box-sizing: border-box;
+}
+
+/* 이미지 반응형 처리 (잘림 방지용) */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 댓글 입력창이나 글 본문이 옆으로 밀릴 때 대비 */
+.post-grid,
+.comment-input,
+.comment-list {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 큰 화면에서 예쁘게 보이게 */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+}
+
+
