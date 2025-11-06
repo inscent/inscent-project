@@ -254,6 +254,76 @@ header.scrolled {
     text-overflow: ellipsis;
 }
 
+/* 검색 */
+#search__overlay {
+    /* 초기에는 화면 위로 완전히 숨김 */
+    position: fixed;
+    top: 0; /* 화면 상단에 붙여서 시작 */
+    left: 0;
+    width: 100%;
+    /* 헤더 높이(1.9rem + 3.1rem = 5rem) + 검색창 높이(대략 40px~60px) */
+    /* 현재 헤더 높이가 5rem이므로, 5rem까지만 보여주고 그 아래는 숨겨야 합니다. */
+    height: 5rem; /* 헤더가 덮는 높이만큼 설정 */
+    background-color: #8d97a3; /* 이미지처럼 흰색 배경 */
+    z-index: 100; /* 헤더 바로 아래 */
+    overflow: hidden; /* 검색창 내부가 넘치지 않도록 */
+
+    /* transform으로 숨기고 나타나게 합니다. */
+    transform: translateY(-100%); /* 자기 높이만큼 위로 올려 숨김 */
+    transition: transform 0.3s ease-in-out; /* 부드러운 애니메이션 */
+    
+    /* 검색창 내부 요소를 중앙에 배치하기 위한 flex */
+    display: flex;
+    align-items: center; /* 검색창을 바닥에 붙여서 헤더 아래로 보이게 */
+    justify-content: center; /* 수평 중앙 정렬 (선택 사항) */
+}
+
+/* 검색 오버레이가 활성화되었을 때 */
+.search-open#search__overlay {
+    /* translateY(0)으로 내려오게 하여 검색창을 보이게 합니다. */
+    /* 헤더의 top + height = 5rem이므로, 5rem만큼 아래로 이동해야 헤더 밑에 검색창이 보입니다. */
+    transform: translateY(5rem); /* 헤더의 실제 높이만큼 내려오게 */
+    height: 10rem; /* 검색창이 내려왔을 때의 실제 높이 */
+}
+
+/* 검색 입력 필드 래퍼 */
+.search__input__wrapper {
+    width: 100%; /* 너비를 100%로 설정 */
+    max-width: 1000px; /* 적당한 최대 너비 */
+    display: flex;
+    align-items: center;
+    padding: 0 3.75rem 0.8rem; /* 좌우 여백, 아래쪽에 살짝 패딩 */
+    box-sizing: border-box;
+}
+
+#search__input {
+    flex-grow: 1; /* 남은 공간을 채우도록 */
+    border: none;
+    border-bottom: 1px solid #ccc; /* 아래쪽 경계선만 */
+    outline: none;
+    padding: 8px 0;
+    font-size: 1rem;
+    background-color: transparent; /* 배경 투명 */
+}
+
+#search__input::placeholder {
+    color: white;
+    text-transform: uppercase; /* 대문자로 */
+}
+
+#search__submit__btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 0;
+}
+
+#search__submit__btn img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
 
 
 
@@ -280,7 +350,15 @@ header.scrolled {
     .main__banner{
         display: none;
     }
-    
+    .search-open#search__overlay {
+        height: 0;
+}
+    .search__overlay>*{
+        display: none;
+        height: 0;
+        background-color: transparent;
+    }
+
     /* 탭 헤더 */
     .tab__header {
         width: auto; 
