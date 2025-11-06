@@ -55,7 +55,7 @@
                 </div>
                 <div class="header__inner__right">
                     <ul class="inner__right__icons">
-                        <li><a href="#"><img src="./img/search.svg" alt="검색 아이콘"></a></li>
+                        <li><a href="#" id="searchOpenBtn" role="button" aria-controls="search__overlay" aria-expanded="false"><img src="./img/search.svg" alt="검색 아이콘"></a></li> 
                         <li><a href="#"><img src="./img/lock.svg" alt="로그인 아이콘"></a></li>
                         <li><a href="#"><img src="./img/account.svg" alt="계정 아이콘"></a></li>
                         <li><a href="#"><img src="./img/cart.svg" alt="장바구니 아이콘"></a></li>
@@ -68,14 +68,16 @@
 
  <!-- 검색 -->
 
-    <div id="search__overlay" class="search__overlay">
-        <div class="search__input__wrapper">
-            <input type="text" id="search__input" placeholder="SEARCH">
-            <button id="search__submit__btn">
-                <img src="./img/search.svg" alt="검색 버튼">
-            </button>
-        </div>
-    </div>
+<div id="search__overlay" class="search__overlay">
+  <button class="search__close" aria-label="검색 닫기">✕</button>
+  <div class="search__input__wrapper">
+    <input type="text" id="search__input" placeholder="SEARCH">
+    <button id="search__submit__btn">
+      <img src="./img/search.svg" alt="검색 버튼">
+    </button>
+  </div>
+</div>
+    
 
 
     <!-- 각 메뉴 -->
@@ -345,5 +347,6 @@
     <div class="overlay" id="overlay"></div>
 
 </div>
+<script src="./js/search.js"></script>
 </body>
 </html>
