@@ -568,13 +568,13 @@ const detailList = [
   category: "ETC",
   image: "./img/product-list/rank-s/etc/lst26-jomalone-diffuser-limebasil.jpg",
   tags: { 
-    scent: "프레시",        // 상큼한 라임 + 허브 느낌
-    mood: "산뜻한",         // 집안 분위기를 밝게 만드는 느낌
-    lasting: "가볍고 은은하게" // 디퓨저이므로 진하지 않고 은은하게 지속
+    scent: "프레시",       
+    mood: "산뜻한",        
+    lasting: "가볍고 은은하게" 
   },
   rating: 4.69,
   variants: [
-    { size: "165ml", price: 130000 }   // 공식 판매 용량 기준으로 입력
+    { size: "165ml", price: 130000 }   
   ]
 },
 {
@@ -632,7 +632,7 @@ const detailList = [
     { size: "50ml", price: 250000 }
   ]
 },
-{ Id:"50",
+{ Id:"51",
   brand: "Tamburins",
   name: "탬버린즈 퍼퓸 리미티드 선샤인",
   category: "PERFUME",
@@ -644,7 +644,7 @@ const detailList = [
     { size: "50ml", price: 250000 }
   ]
 },
-{ Id:"51",
+{ Id:"52",
   brand: "Byredo",
   name: "바이레도 알토 아스트랄 오 드 퍼퓸",
   category: "PERFUME",
@@ -657,7 +657,7 @@ const detailList = [
     { size: "100ml", price: 495000 }
   ]
 },
-{ Id:"52",
+{ Id:"53",
   brand: "Yves Saint",
   name: "입생로랑 베이비캣 오 드 빠르펭",
   category: "PERFUME",
@@ -670,7 +670,7 @@ const detailList = [
     { size: "125ml", price: 540000 }
   ]
 },
-{ Id:"53",
+{ Id:"54",
   brand: "Diptyque",
   name: "딥티크 플레르 드 뽀 오 드 뚜왈렛",
   category: "PERFUME",
@@ -683,7 +683,7 @@ const detailList = [
     { size: "125ml", price: 318000 }
   ]
 },
-{ Id:"54",
+{ Id:"55",
   brand: "Le Labo",
   name: "르라보 오스만투스 19",
   category: "PERFUME",
@@ -699,7 +699,7 @@ const detailList = [
 },
 
 // ===== BODY =====
-{ Id:"55",
+{ Id:"56",
   brand: "Byredo",
   name: "바이레도 유자 트리 핸드 로션",
   category: "BODY",
@@ -710,7 +710,7 @@ const detailList = [
     { size: "450ml", price: 79000 }
   ]
 },
-{ Id:"56",
+{ Id:"57",
   brand: "Acqua Di Parma",
   name: "아쿠아 디 파르마 핸드 앤 바디 로션 부옹조르노",
   category: "BODY",
@@ -721,7 +721,7 @@ const detailList = [
     { size: "300ml", price: 105000 }
   ]
 },
-{ Id:"57",
+{ Id:"58",
   brand: "Jo Malone",
   name: "조말론 라임 바실 앤 만다린 바디 앤 핸드 로션",
   category: "BODY",
@@ -732,7 +732,7 @@ const detailList = [
     { size: "250ml", price: 115000 }
   ]
 },
-{ Id:"58",
+{ Id:"59",
   brand: "Diptyque",
   name: "딥디크 프레쉬 로션 포 더 바디",
   category: "BODY",
@@ -743,7 +743,7 @@ const detailList = [
     { size: "200ml", price: 89000 }
   ]
 },
-{ Id:"59",
+{ Id:"60",
   brand: "Diptyque",
   name: "딥디크 플레르 드 포 핸드 앤 바디 로션",
   category: "BODY",
@@ -754,7 +754,7 @@ const detailList = [
     { size: "350ml", price: 95000 }
   ]
 },
-{ Id:"60",
+{ Id:"61",
   brand: "Tamburins",
   name: "탬버린즈 샤워리 바디 로션 포그",
   category: "BODY",
@@ -765,7 +765,7 @@ const detailList = [
     { size: "250ml", price: 48000 }
   ]
 },
-{ Id:"61",
+{ Id:"62",
   brand: "Tamburins",
   name: "탬버린즈 샤워리 바디 로션 님버스",
   category: "BODY",
@@ -778,7 +778,7 @@ const detailList = [
 },
 
 // ===== HAIR =====
-{ Id:"62",
+{ Id:"63",
   brand: "Diptyque",
   name: "딥티크 리미티드 에디션 퍼퓸 샴푸 포 헤어",
   category: "HAIR",
@@ -789,7 +789,7 @@ const detailList = [
     { size: "195ml", price: 87000 }
   ]
 },
-{ Id:"63",
+{ Id:"64",
   brand: "Diptyque",
   name: "딥티크 필로시코스 헤어 미스트",
   category: "HAIR",
@@ -800,7 +800,7 @@ const detailList = [
     { size: "30ml", price: 94000 }
   ]
 },
-{ Id:"64",
+{ Id:"65",
   brand: "Diptyque",
   name: "딥티크 일리오 리미티드 에디션 헤어 미스트",
   category: "HAIR",
@@ -811,7 +811,7 @@ const detailList = [
     { size: "30ml", price: 93000 }
   ]
 },
-{ Id:"65",
+{ Id:"66",
   brand: "Prada",
   name: "프라다 패러독스 헤어 미스트",
   category: "HAIR",
@@ -822,7 +822,7 @@ const detailList = [
     { size: "30ml", price: 72000 }
   ]
 },
-{ Id:"66",
+{ Id:"67",
   brand: "Dior",
   name: "디올 미스 디올 오 드 퍼퓸 헤어 미스트",
   category: "HAIR",
@@ -835,7 +835,7 @@ const detailList = [
 },
 
 // ===== ETC =====
-{ Id:"67",
+{ Id:"68",
   brand: "Le Labo",
   name: "르라보 페티 그레인 21 홈 프래그런스",
   category: "ETC",
@@ -846,7 +846,7 @@ const detailList = [
     { size: "100ml", price: 169000 }
   ]
 },
-{ Id:"68",
+{ Id:"69",
   brand: "Nonfiction",
   name: "논픽션 랍상송 룸 스프레이",
   category: "ETC",
@@ -858,7 +858,7 @@ const detailList = [
     { size: "150ml", price: 65000 }
   ]
 },
-{ Id:"69",
+{ Id:"70",
   brand: "Diptyque",
   name: "딥티크 리미티드 에디션 클래식 시트로넬 캔들",
   category: "ETC",
@@ -869,7 +869,7 @@ const detailList = [
     { size: "190g", price: 108000 }
   ]
 },
-{ Id:"70",
+{ Id:"71",
   brand: "Aesop",
   name: "이솝 무라사키 아로마틱 인센스",
   category: "ETC",
@@ -880,7 +880,7 @@ const detailList = [
     { size: "33 sticks (13g)", price: 47000 }
   ]
 },
-{ Id:"71",
+{ Id:"72",
   brand: "Aesop",
   name: "이솝 이스트로스 콤팩트 룸 스프레이",
   category: "ETC",
@@ -891,7 +891,7 @@ const detailList = [
     { size: "50ml", price: 49000 }
   ]
 },
-{ Id:"72",
+{ Id:"73",
   brand: "Aesop",
   name: "이솝 키테라 콤팩트 룸 스프레이",
   category: "ETC",
@@ -902,7 +902,7 @@ const detailList = [
     { size: "50ml", price: 60000 }
   ]
 },
-{ Id:"73",
+{ Id:"74",
   brand: "Aesop",
   name: "이솝 올루스 콤팩트 룸 스프레이",
   category: "ETC",

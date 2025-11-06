@@ -553,6 +553,16 @@ const thumbList = [
     ]
   },
   {
+  brand: "Jo Malone",
+  name: "조 말론 라임 바질 앤 만다린 센트 서라운드 디퓨저",
+  category: "ETC",
+  image: "./img/product-list/rank-s/etc/lst26-jomalone-diffuser-limebasil.jpg",
+  rating: 4.69,
+  variants: [
+    { size: "165ml", price: 130000 }
+  ]
+},
+  {
     brand: "Acqua Di Parma",
     name: "아쿠아 디 파르마 차량용 디퓨저 레더 케이스 옐로우",
     category: "ETC",
