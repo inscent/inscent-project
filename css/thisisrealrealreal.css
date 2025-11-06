@@ -255,6 +255,15 @@ header.scrolled {
 }
 
 /* 검색 */
+
+/* 검색 오버레이는 헤더 바로 아래 레이어 */
+#search__overlay { z-index: 1500; }
+
+/* 활성화 상태 선택자 정리 (순서만 바꿈) */
+#search__overlay.search-open {
+  transform: translateY(5rem); /* 헤더 높이 */
+  height: 10rem;
+}
 #search__overlay {
     /* 초기에는 화면 위로 완전히 숨김 */
     position: fixed;
@@ -282,8 +291,9 @@ header.scrolled {
 .search-open#search__overlay {
     /* translateY(0)으로 내려오게 하여 검색창을 보이게 합니다. */
     /* 헤더의 top + height = 5rem이므로, 5rem만큼 아래로 이동해야 헤더 밑에 검색창이 보입니다. */
-    transform: translateY(5rem); /* 헤더의 실제 높이만큼 내려오게 */
-    height: 10rem; /* 검색창이 내려왔을 때의 실제 높이 */
+    /* transform: translateY(5rem); 헤더의 실제 높이만큼 내려오게 */
+    height: 20rem; /* 검색창이 내려왔을 때의 실제 높이 */
+    z-index: 10000;
 }
 
 /* 검색 입력 필드 래퍼 */
@@ -303,6 +313,7 @@ header.scrolled {
     outline: none;
     padding: 8px 0;
     font-size: 1rem;
+    color: #fff;
     background-color: transparent; /* 배경 투명 */
 }
 
@@ -323,6 +334,9 @@ header.scrolled {
     width: 20px;
     height: 20px;
     vertical-align: middle;
+}
+.search__close{
+    color: #fff;
 }
 
 
