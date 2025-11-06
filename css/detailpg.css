@@ -503,6 +503,9 @@ img {
   text-decoration: none;
   font-weight: 700;
 }
+.rank-banner{
+  width: 100%;
+}
 
 /* =============== 20. 반응형 (모바일 768px 이하) =============== */
 @media (max-width: 768px) {
