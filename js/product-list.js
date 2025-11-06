@@ -45,8 +45,8 @@ const PRODUCTS = SOURCE.map((p, idx) => {
     rating: p.rating,
     tags: p.tags || null,
     price,                 // ✅ 리스트/정렬/필터 공통 사용
-    id: idx,
-    link: `./detailpg.html?id=${idx}` // 필요 시 파일명 맞게 수정
+    pid: idx,
+    link: `./detailpg.html?pid=${idx}` // 필요 시 파일명 맞게 수정
   };
 });
 
