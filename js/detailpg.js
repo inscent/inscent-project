@@ -16,7 +16,7 @@ function getProductFromQuery(list) {
   }
 
   // 2) 백업: pid 또는 id (숫자 인덱스)
-  const raw = params.get('pid') ?? params.get('id');
+  const raw = params.get('pid') ?? params.get('id') ??  params.get('cid');
   const idx = parseInt(raw, 10);
   if (!Number.isNaN(idx) && idx >= 0 && idx < list.length) {
     return { product: list[idx], index: idx };
