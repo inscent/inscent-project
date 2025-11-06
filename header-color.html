@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>헤더진자진짜진짜마지막</title>
+    <title>헤더진자진짜진짜마지막배경색있음</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/font.css">
     <link rel="stylesheet" href="./css/system.css">
     <link rel="stylesheet" href="./css/header-color.css">
     <!-- <link rel="stylesheet" href="./css/thisisrealrealreal.css"> -->
     <script src="./js/thisisrealrealreal.js"></script>
+    <script src="./js/header-color.js"></script>
 </head>
 <body>
     <div class="header__real">
@@ -55,7 +56,7 @@
                 </div>
                 <div class="header__inner__right">
                     <ul class="inner__right__icons">
-                        <li><a href="#"><img src="./img/search.svg" alt="검색 아이콘"></a></li>
+                        <li class="search__icon"><a href="#"><img src="./img/search.svg" alt="검색 아이콘"></a></li>
                         <li><a href="#"><img src="./img/lock.svg" alt="로그인 아이콘"></a></li>
                         <li><a href="#"><img src="./img/account.svg" alt="계정 아이콘"></a></li>
                         <li><a href="#"><img src="./img/cart.svg" alt="장바구니 아이콘"></a></li>
@@ -65,6 +66,20 @@
             </div>
         </div>
     </header>
+
+    <!-- 검색 -->
+
+    <div id="search__overlay" class="search__overlay">
+        <div class="search__input__wrapper">
+            <input type="text" id="search__input" placeholder="SEARCH">
+            <button id="search__submit__btn">
+                <img src="./img/search.svg" alt="검색 버튼">
+            </button>
+        </div>
+    </div>
+
+
+
     <!-- 각 메뉴 -->
     <div class="gnb__container">
         <div class="common-frame">
@@ -279,6 +294,12 @@
     <!-- 탭 메뉴 -->
     <div class="tab__all" id="sideMenu">
         <div class="tab__all__inner">
+            <div class="search__tabmoobile">
+                <input type="text" id="search__input" placeholder="SEARCH">
+                <button id="search__submit__btn">
+                    <img src="./img/search.svg" alt="검색 버튼">
+                </button>
+            </div>
             <ul class="tab__all__menu">
                 <li class="point"><a href="#">ABOUT US</a>
                     <ul class="tab__all__dep1">
