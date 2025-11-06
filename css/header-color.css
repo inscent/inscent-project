@@ -304,6 +304,7 @@ header.scrolled {
     padding: 8px 0;
     font-size: 1rem;
     background-color: transparent; /* 배경 투명 */
+    color: white;
 }
 
 #search__input::placeholder {
@@ -408,12 +409,24 @@ header.scrolled {
     font-size: 1rem;
     background-color: transparent;
     margin-bottom: 20px;
+    width: 13.83rem;
 }
 
 #search__input::placeholder {
     color: white;
     text-transform: uppercase; /* 대문자로 */
 }
+
+#search__submit__btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    padding: 0;
+}
+
+
+
     .tab__all__menu{
         display: flex;
         flex-direction: column;
@@ -520,7 +533,7 @@ header.scrolled {
     }
     
 
-@media(max-width:768px){
+@media (max-width:768px){
     html{
         font-size: var(--basic-font-mobile);
     }
@@ -559,4 +572,5 @@ header.scrolled {
     .header__logo>a>img{
         height: 1.2rem;
     }
+
 }
