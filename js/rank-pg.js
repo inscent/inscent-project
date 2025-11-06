@@ -1,5 +1,5 @@
 /* =========================
-   데이터 (네가 보낸 그대로)
+   데이터
    ========================= */
 const finalList = [
   // 
@@ -65,14 +65,14 @@ const finalList = [
    설정 & 상태
    ========================= */
 const VISIBLE_CATEGORIES = ["PERFUME","BODY","HAIR","ETC"];
-const INCLUDE_ALL = true;               // ALL 탭 사용 여부
-const PAGE_SIZE   = 10;                 // 페이지당 10개
+const INCLUDE_ALL = true;    // ALL 탭 사용 여부
+const PAGE_SIZE   = 10;      // 페이지당 10개
 const state = { active: INCLUDE_ALL ? "ALL" : "PERFUME", page: 1 };
 
 /* =========================
    유틸
    ========================= */
-const $ = (sel) => document.querySelector(sel);
+const $ = (sel, scope=document) => scope.querySelector(sel);
 
 function countByCategory(items){
   return items.reduce((acc, cur)=>{
@@ -90,19 +90,62 @@ function getFilteredItems(all){
 }
 
 /* =========================
+   데이터 소스 결합 가드
+   - finalList/ detailList/ window.anything 중 첫번째 유효한 배열 사용
+   - 데이터가 위에 “같은 파일”에 있어도 잘 잡아옴
+   ========================= */
+function pickDataSource(){
+  // 가장 흔한 이름들 우선순위로 탐색
+  const candidates = [
+    window.finalList,
+    window.detailList,
+    (typeof finalList   !== 'undefined' ? finalList   : undefined),
+    (typeof detailList  !== 'undefined' ? detailList  : undefined),
+  ].filter(Boolean);
+
+  if (candidates.length) return candidates[0];
+
+  // 마지막 시도: window 전역에서 “배열이며 객체 아이템을 가진” 후보 찾기
+  for (const k in window) {
+    try {
+      const v = window[k];
+      if (Array.isArray(v) && v.length && typeof v[0] === 'object') {
+        // 브랜드/이름/카테고리/이미지 키가 그나마 있는지 힌트 체크
+        const keys = Object.keys(v[0]);
+        const score = ['brand','name','category','image'].reduce((s, key)=>s + (keys.includes(key)?1:0), 0);
+        if (score >= 2) return v;
+      }
+    } catch(e){}
+  }
+  return [];
+}
+
+/* =========================
+   데이터: pid(고정키) 보강
+   ========================= */
+function ensurePidOn(list){
+  list.forEach((it, idx) => { if (it && it.pid == null) it.pid = idx; });
+  return list;
+}
+
+/* =========================
    렌더: 리스트 (클래스명 유지)
    ========================= */
 function renderList(items, offset=0, targetSelector="#rank-list"){
   const target = $(targetSelector);
-  if (!target) return;
-  console.log(items)
+  if (!target) {
+    console.warn("[rank] #rank-list 요소가 없습니다. 마크업을 확인하세요.");
+    return;
+  }
+
   target.innerHTML = items.map((item, idx) => `
-    <li class="product-box">
-      <a href="./detailpg.html?cid=${idx}">
-      <div class="rank-num">${offset + idx + 1}</div>
+    <li class="product-box" data-pid="${item.pid}">
+      <a href="./detailpg.html?pid=${item.pid}" class="rank-link">
+        <div class="rank-num">${offset + idx + 1}</div>
         <figure>
           <div class="thumb">
-            <img src="${item.image}" alt="${item.brand} ${item.name}" loading="lazy"onerror="this.src='./img/err-img.jpg'">
+            <img src="${item.image}" alt="${item.brand} ${item.name}"
+                 loading="lazy" onerror="this.src='./img/err-img.jpg'">
           </div>
           <figcaption>
             <p class="brand">${item.brand}</p>
@@ -124,13 +167,17 @@ function renderList(items, offset=0, targetSelector="#rank-list"){
    ========================= */
 function renderFilter(items, targetSelector="#rank-filter"){
   const target = $(targetSelector);
-  if (!target) return;
+  if (!target) {
+    console.warn("[rank] #rank-filter 요소가 없습니다. 마크업을 확인하세요.");
+    return;
+  }
 
   const counts = countByCategory(items);
   const total  = Object.values(counts).reduce((a,b)=>a+b,0);
 
   const tabs = INCLUDE_ALL
-    ? [{ key:"ALL", label:"ALL", count: total }, ...VISIBLE_CATEGORIES.map(cat => ({ key:cat, label:cat, count:counts[cat]||0 }))]
+    ? [{ key:"ALL", label:"ALL", count: total },
+       ...VISIBLE_CATEGORIES.map(cat => ({ key:cat, label:cat, count:counts[cat]||0 }))]
     : VISIBLE_CATEGORIES.map(cat => ({ key:cat, label:cat, count:counts[cat]||0 }));
 
   target.innerHTML = tabs.map(t => `
@@ -144,6 +191,18 @@ function renderFilter(items, targetSelector="#rank-filter"){
       </button>
     </li>
   `).join('');
+
+  if (!target.dataset.bound) {
+    target.addEventListener("click", (e)=>{
+      const btn = e.target.closest(".rank-filter-btn");
+      if (!btn) return;
+      state.active = btn.dataset.cat;
+      state.page = 1;
+      console.log("[rank] 필터 변경:", state.active);
+      apply();
+    });
+    target.dataset.bound = "1";
+  }
 }
 
 /* =========================
@@ -151,15 +210,18 @@ function renderFilter(items, targetSelector="#rank-filter"){
    ========================= */
 function renderPager(totalItems, targetSelector="#rank-pager"){
   const target = $(targetSelector);
-  if (!target) return;
+  if (!target) {
+    console.warn("[rank] #rank-pager 요소가 없습니다. 마크업을 확인하세요.");
+    return;
+  }
 
   const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE));
   state.page = Math.min(state.page, totalPages);
 
   const mkBtn = (label, page, {active=false, disabled=false}={}) => `
     <li>
-      <button ${disabled?'disabled':''}
-              class="${active?'is-active':''}"
+      <button ${disabled ? 'disabled' : ''}
+              class="${active ? 'is-active' : ''}"
               type="button"
               data-page="${page}">
         ${label}
@@ -169,59 +231,61 @@ function renderPager(totalItems, targetSelector="#rank-pager"){
 
   const cur = state.page;
   let html = '';
-
-  // Prev
   html += mkBtn('‹', Math.max(1, cur-1), { disabled: cur===1 });
-
-  // 숫자 버튼
   for (let p=1; p<=totalPages; p++){
     html += mkBtn(String(p), p, { active: p===cur });
   }
-
-  // Next
   html += mkBtn('›', Math.min(totalPages, cur+1), { disabled: cur===totalPages });
 
   target.innerHTML = html;
 
-  // 이벤트 위임
-  target.onclick = (e) => {
-    const btn = e.target.closest('button[data-page]');
-    if (!btn || btn.disabled) return;
-    state.page = Number(btn.dataset.page);
-    apply(); // 다시 렌더
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  if (!target.dataset.bound) {
+    target.addEventListener("click", (e) => {
+      const btn = e.target.closest('button[data-page]');
+      if (!btn || btn.disabled) return;
+      state.page = Number(btn.dataset.page);
+      console.log("[rank] 페이지 이동:", state.page);
+      apply();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    target.dataset.bound = "1";
+  }
 }
 
 /* =========================
    컨트롤: 적용(필터 + 페이지)
    ========================= */
 function apply(){
-  const filtered = getFilteredItems(finalList);
-  const total  = filtered.length;
-  const start  = (state.page - 1) * PAGE_SIZE;
-  const pageItems = filtered.slice(start, start + PAGE_SIZE);
+  const src = ensurePidOn(pickDataSource());
+  if (!Array.isArray(src)) {
+    console.error("[rank] 데이터 소스가 배열이 아닙니다.", src);
+    return;
+  }
+  if (!src.length) {
+    console.warn("[rank] 데이터가 비었습니다. 변수명/로드 순서를 확인하세요.");
+    // 빈 상태 UI 표시(선택)
+    renderList([], 0, "#rank-list");
+    renderFilter([], "#rank-filter");
+    renderPager(0, "#rank-pager");
+    return;
+  }
+
+  const filtered = getFilteredItems(src);
+  const total    = filtered.length;
+  const start    = (state.page - 1) * PAGE_SIZE;
+  const pageItems= filtered.slice(start, start + PAGE_SIZE);
+
+  console.log("[rank] 데이터:", { totalAll: src.length, totalFiltered: total, page: state.page, active: state.active });
 
   renderList(pageItems, start, "#rank-list");
-  renderFilter(finalList, "#rank-filter");
+  renderFilter(src, "#rank-filter");
   renderPager(total, "#rank-pager");
-
-  const filterRoot = $("#rank-filter");
-  if (!filterRoot.dataset.bound) {
-    filterRoot.addEventListener("click", (e)=>{
-      const btn = e.target.closest(".rank-filter-btn");
-      if (!btn) return;
-      state.active = btn.dataset.cat;
-      state.page = 1;
-      apply();
-    });
-    filterRoot.dataset.bound = "1";
-  }
 }
 
 /* =========================
    부팅
    ========================= */
 document.addEventListener("DOMContentLoaded", () => {
-  apply(); // 기본: ALL 1페이지
+  console.log("[rank] DOMContentLoaded");
+  apply();
 });
