@@ -95,10 +95,10 @@ function getFilteredItems(all){
 function renderList(items, offset=0, targetSelector="#rank-list"){
   const target = $(targetSelector);
   if (!target) return;
-
+  console.log(items)
   target.innerHTML = items.map((item, idx) => `
     <li class="product-box">
-      <a href="#">
+      <a href="./detailpg.html?cid=${idx}">
       <div class="rank-num">${offset + idx + 1}</div>
         <figure>
           <div class="thumb">
