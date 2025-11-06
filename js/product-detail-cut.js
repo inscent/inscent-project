@@ -507,7 +507,7 @@ const detailList = [
   ]
 },
 
-// ===== ETC (9) =====
+// ===== ETC (10) =====
 {
   brand: "Diptyque",
   name: "딥티크 베이 룸 스프레이",
@@ -519,6 +519,17 @@ const detailList = [
     { size: "150ml", price: 99000 }
   ]
 },
+{
+  brand: "Acqua Di Parma",
+  name: "아쿠아 디 파르마 차량용 디퓨저 레더 케이스 다크 그레이",
+  category: "ETC",
+  image: "./img/product-list/rank-l/etc/lst22-acquadiparma-cardiffuser-darkgrey.jpg",
+  rating: 4.72,
+  variants: [
+    { size: "case", price: 170000 }
+  ]
+},
+
 {
   brand: "Jo Malone",
   name: "조 말론 우드 세이지 앤 씨 솔트 리미티드 디퓨저",
@@ -542,6 +553,31 @@ const detailList = [
   ]
 },
 {
+  brand: "Acqua Di Parma",
+  name: "아쿠아 디 파르마 차량용 디퓨저 레더 케이스 로얄 블루",
+  category: "ETC",
+  image: "./img/product-list/rank-l/etc/lst25-acquadiparma-cardiffuser-royalblue.jpg",
+  rating: 4.78,
+  variants: [
+    { size: "case", price: 170000 }
+  ]
+},
+{
+  brand: "Jo Malone",
+  name: "조 말론 라임 바질 앤 만다린 센트 서라운드 디퓨저",
+  category: "ETC",
+  image: "./img/product-list/rank-s/etc/lst26-jomalone-diffuser-limebasil.jpg",
+  tags: { 
+    scent: "프레시",        // 상큼한 라임 + 허브 느낌
+    mood: "산뜻한",         // 집안 분위기를 밝게 만드는 느낌
+    lasting: "가볍고 은은하게" // 디퓨저이므로 진하지 않고 은은하게 지속
+  },
+  rating: 4.69,
+  variants: [
+    { size: "165ml", price: 130000 }   // 공식 판매 용량 기준으로 입력
+  ]
+},
+{
   brand: "Diptyque",
   name: "딥티크 차량용 디퓨저 케이스 & 리필 세트 34번가 생제르망",
   category: "ETC",
@@ -553,6 +589,16 @@ const detailList = [
   ]
 },
 {
+  brand: "Acqua Di Parma",
+  name: "아쿠아 디 파르마 차량용 디퓨저 레더 케이스 옐로우",
+  category: "ETC",
+  image: "./img/product-list/rank-l/etc/lst28-acquadiparma-cardiffuser-yellow.jpg",
+  rating: 4.75,
+  variants: [
+    { size: "case", price: 170000 }
+  ]
+},
+{
   brand: "Diptyque",
   name: "딥티크 로즈 룸 스프레이",
   category: "ETC",
@@ -561,36 +607,6 @@ const detailList = [
   rating: 4.74,
   variants: [
     { size: "150ml", price: 99000 }
-  ]
-},
-{
-  brand: "Acqua Di Parma",
-  name: "아쿠아 디 파르마 차량용 디퓨저 레더 케이스 다크 그레이",
-  category: "ETC",
-  image: "./img/product-list/rank-l/etc/lst22-acquadiparma-cardiffuser-darkgrey.jpg",
-  rating: 4.72,
-  variants: [
-    { size: "case", price: 170000 }
-  ]
-},
-{
-  brand: "Acqua Di Parma",
-  name: "아쿠아 디 파르마 차량용 디퓨저 레더 케이스 로얄 블루",
-  category: "ETC",
-  image: "./img/product-list/rank-l/etc/lst25-acquadiparma-cardiffuser-royalblue.jpg",
-  rating: 4.78,
-  variants: [
-    { size: "case", price: 170000 }
-  ]
-},
-{
-  brand: "Acqua Di Parma",
-  name: "아쿠아 디 파르마 차량용 디퓨저 레더 케이스 옐로우",
-  category: "ETC",
-  image: "./img/product-list/rank-l/etc/lst28-acquadiparma-cardiffuser-yellow.jpg",
-  rating: 4.75,
-  variants: [
-    { size: "case", price: 170000 }
   ]
 },
 {
