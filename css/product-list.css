@@ -95,16 +95,15 @@
 }
 
 /* + 아이콘 (가로, 세로 막대) */
-.acc-head::after,
-.acc-head::before {
-  content: "";
-  position: absolute;
-  right: 0.25rem;
-  top: 50%;
-  width: 20px;
-  height: 1px;
-  background: var(--slate-gray-500);
-  transform: translateY(-50%);
+.acc-head::after, .acc-head::before {
+    content: "";
+    position: absolute;
+    right: 0.25rem;
+    top: 50%;
+    width: 0.5rem;
+    height: 1px;
+    background: var(--slate-gray-500);
+    transform: translateY(-50%);
 }
 
 /* 세로 막대 (즉, +의 한쪽) */
