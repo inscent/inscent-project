@@ -69,14 +69,15 @@
 
     <!-- 검색 -->
 
-    <div id="search__overlay" class="search__overlay">
-        <div class="search__input__wrapper">
-            <input type="text" id="search__input" placeholder="SEARCH">
-            <button id="search__submit__btn">
-                <img src="./img/search.svg" alt="검색 버튼">
-            </button>
-        </div>
-    </div>
+<div id="search__overlay" class="search__overlay">
+  <button class="search__close" aria-label="검색 닫기">✕</button>
+  <div class="search__input__wrapper">
+    <input type="text" id="search__input" placeholder="SEARCH">
+    <button id="search__submit__btn">
+      <img src="./img/search.svg" alt="검색 버튼">
+    </button>
+  </div>
+</div>
 
 
 
@@ -295,8 +296,8 @@
     <div class="tab__all" id="sideMenu">
         <div class="tab__all__inner">
             <div class="search__tabmobile">
-                <input type="text" id="search__input" placeholder="SEARCH">
-                <button id="search__submit__btn">
+                <input type="text" id="search__tabmobile__input" placeholder="SEARCH">
+                <button id="search__tabmobile__btn">
                     <img src="./img/search.svg" alt="검색 버튼">
                 </button>
             </div>
@@ -353,6 +354,9 @@
     <!-- 오버레이 -->
     <div class="overlay" id="overlay"></div>
 
+    <!-- 검색바 -->
+    <script src="./js/search.js"></script>
+    
 </div>
 </body>
 </html>
