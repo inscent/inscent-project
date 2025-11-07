@@ -2,6 +2,13 @@
   min-height: 2000px;
 } */
 
+/* @media (min-width: 1920px) {
+body{
+max-width: 1920px;
+margin: 0 auto;
+}
+} */
+
 /* 띠배너 */
 .carousel {
   width: 100%;
@@ -267,7 +274,7 @@ header.scrolled {
 #search__overlay {
     /* 초기에는 화면 위로 완전히 숨김 */
     position: fixed;
-    top: 0; /* 화면 상단에 붙여서 시작 */
+    top: -62px; /* 화면 상단에 붙여서 시작 */
     left: 0;
     width: 100%;
     /* 헤더 높이(1.9rem + 3.1rem = 5rem) + 검색창 높이(대략 40px~60px) */
