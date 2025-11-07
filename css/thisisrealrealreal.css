@@ -285,6 +285,9 @@ header.scrolled {
     display: flex;
     align-items: center; /* 검색창을 바닥에 붙여서 헤더 아래로 보이게 */
     justify-content: center; /* 수평 중앙 정렬 (선택 사항) */
+
+    flex-direction: column-reverse;
+
 }
 
 /* 검색 오버레이가 활성화되었을 때 */
@@ -337,6 +340,8 @@ header.scrolled {
 }
 .search__close{
     color: #fff;
+    position: absolute;
+    bottom: 30px;
 }
 
 
@@ -411,6 +416,31 @@ header.scrolled {
     }
 
     /* 탭 메뉴 */
+
+        #search__tabmobile__input {
+    flex-grow: 1;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    padding: 8px 0;
+    font-size: 1rem;
+    background-color: transparent;
+    margin-bottom: 20px;
+    width: 13.83rem;
+}
+
+#search__tabmobile__input::placeholder {
+    color: white;
+    text-transform: uppercase; /* 대문자로 */
+}
+
+#search__tabmobile__btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    padding: 0;
+}
     .tab__all__menu{
         display: flex;
         flex-direction: column;
@@ -555,4 +585,21 @@ header.scrolled {
     .header__logo>a>img{
         height: 1.2rem;
     }
+
+        /* 검색 */
+    .search__tabmobile {
+    display: flex;
+    width: auto;
+    margin-right: 3rem;
+    position: relative;
+}
+    #search__tabmobile__btn {
+    background: none;
+    /* border: none; */
+    cursor: pointer;
+    margin-right: 10px;
+    padding: 0;
+    position: absolute;
+    right: 0;
+}
 }
