@@ -326,7 +326,7 @@ document.addEventListener('DOMContentLoaded', () => {
     isOpen ? closeFilter() : openFilter();
   });
 
-  backdrop.addEventListener('click', closeFilter);
+  // backdrop.addEventListener('click', closeFilter);
 
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && filterWrap.classList.contains('is-open')) {
