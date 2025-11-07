@@ -50,6 +50,7 @@ img {
 }
 
 /* =============== 3. 오른쪽 주문 패널 (PC 고정) =============== */
+
 .top__right__space {
   width: 40%;
   position: fixed;
@@ -509,6 +510,9 @@ img {
 
 /* =============== 20. 반응형 (모바일 768px 이하) =============== */
 @media (max-width: 768px) {
+  .top__right__space {
+    border-left: 1px solid #fff;
+}
 /* 기존구매버튼 display:none */
 .buttons {
     display: none;
