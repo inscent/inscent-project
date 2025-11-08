@@ -111,10 +111,10 @@ header.scrolled {
 } */
 
 /* 모든메뉴 */
-.header__all{
+.header__all {
     position: absolute;
     left: 0;
-    top:100px;
+    top: 100%;
     width: 100%;
     background-color: #8d97a3;
     font-size: 0.65rem;
@@ -183,7 +183,7 @@ header.scrolled {
     position: fixed;
     font-size: 0.65rem;
     left: 0;
-    top: 100px;
+    top: 100%;
     width: 100%;
     /* min-height: 100px; */
     max-height: 0;
