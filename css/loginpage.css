@@ -1,9 +1,8 @@
-@media (min-width:1920px){
+/* @media (min-width:1920px){ */
     body{
-        width: 1920px;
-        margin: 0 auto;
+
+        margin: 0 auto;margin
     }
-}
 
 html{
     font-size: 20px;
@@ -161,7 +160,6 @@ html{
     display: flex;
     gap: 6.11rem;
 }
-}
 
 @media (max-width:768px){
 
@@ -229,5 +227,6 @@ html{
 }
     .fake__img {
     margin-bottom: 2.14rem;
+}
 }
 }
