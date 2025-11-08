@@ -1,13 +1,13 @@
 /* =============== 0. 초기값 & 공통 =============== */
 html { scroll-behavior: smooth; }  
-/* * {
+* {
   box-sizing: border-box;
 }
 body {
   margin: 0;
   font-family: Pretendard, sans-serif;
   color: #111;
-} */
+}
 img {
   display: block;
   max-width: 100%;
@@ -33,7 +33,6 @@ img {
     /* width: 100%; */
     /* max-width: 1200px; */
     flex: 4;
-    padding: 0 2rem;
     /* margin: 0 auto; */
     padding-top: 40px;
 }
@@ -517,16 +516,16 @@ img {
 }
 
 /* ===============  태블릿 대응 (1440px 이하) =============== */
-@media (max-width:1440px) {
- .review__page {
-    flex-direction: row;
-    text-align: left;
-  }
-
+@media (max-width: 1440px) {
+  .review__page {
+  /* display: flex; */
+  flex-direction: column;
+  padding: 1rem;
+}
 }
 
-/* =============== 20. 반응형 (1024px 이하) =============== */
-@media (max-width:1024px) {
+/* =============== 20. 반응형 (모바일 768px 이하) =============== */
+@media (max-width: 768px) {
   .wide-frame {
     position: relative;
     display: flex;
@@ -613,38 +612,20 @@ img {
 
   /* 리뷰 카드 모바일에서 세로 정렬 */
   .review__page {
-    flex-direction: row;
+    /* flex-direction: column; */
+    text-align: left;
   }
-      .review__left__1 {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    column-gap: 1rem;}
 
   /* 본문 아래 여백(고정바 높이만큼) */
   body {
     padding-bottom: 70px;
   }
-  .review-img {
-    width: 40%;
-    height: auto;
-    border-radius: 8px;
-}
-@media (max-width:450px){
-    .review__page {
-    flex-direction: column;
-    .review__left__1 {
+@media (max-width:300px){
+  .review__left__1 {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
-    column-gap: 1rem;
-}
-  }
-.review__left p {
-  text-align: center;
-}
-  .review-img {
-    width: 300px;
+    gap: 10px;
 }
 }
 
