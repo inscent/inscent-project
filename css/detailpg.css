@@ -324,12 +324,13 @@ img {
 /* 리뷰 카드 */
 .review__page {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 40px;
+  gap: 2rem;
   border: 1px solid var(--slate-gray-300);
   border-radius: 10px;
-  padding: 40px;
+  padding: 2rem;
 }
 
 /* 리뷰 텍스트 영역 */
@@ -514,6 +515,15 @@ img {
   width: 100%;
 }
 
+/* ===============  태블릿 대응 (1440px 이하) =============== */
+@media (max-width: 1440px) {
+  .review__page {
+  /* display: flex; */
+  flex-direction: column;
+  padding: 1rem;
+}
+}
+
 /* =============== 20. 반응형 (모바일 768px 이하) =============== */
 @media (max-width: 768px) {
   .wide-frame {
@@ -602,7 +612,7 @@ img {
 
   /* 리뷰 카드 모바일에서 세로 정렬 */
   .review__page {
-    flex-direction: column;
+    /* flex-direction: column; */
     text-align: left;
   }
 
@@ -610,12 +620,13 @@ img {
   body {
     padding-bottom: 70px;
   }
-
-/* =============== 21. 태블릿 대응 (1440px 이하) =============== */
-@media (max-width: 1440px) {
-  .review__page {
+@media (max-width:300px){
+  .review__left__1 {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-  }
+    align-items: center;
+    gap: 10px;
 }
+}
+
 
