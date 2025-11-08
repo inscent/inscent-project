@@ -25,22 +25,27 @@ img {
 }
 
 /* =============== 1. 상단 전체 레이아웃 =============== */
+.wide-frame {
+    position: relative;
+    display: flex;
+}
 .detailpage {
     /* width: 100%; */
     /* max-width: 1200px; */
+    flex: 4;
     /* margin: 0 auto; */
     padding-top: 40px;
 }
 
 .top__space {
-  display: flex;
-  gap: 2.7rem;
-  align-items: flex-start;
+    /* display: flex; */
+    /* gap: 2.7rem;
+    align-items: flex-start; */
 }
 
 /* =============== 2. 왼쪽 상품 이미지 영역 =============== */
 .top__left__space {
-    width: 60%;
+    /* width: 60%; */
     padding-right: 1rem;
 }
 .top__left__space figure img {
@@ -52,15 +57,16 @@ img {
 /* =============== 3. 오른쪽 주문 패널 (PC 고정) =============== */
 
 .top__right__space {
-  width: 40%;
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  padding: 2rem 3rem;
-  overflow-y: auto;
-  background-color: #fff;
-  border-left: 1px solid var(--slate-gray-200);
+    /* width: 40%; */
+    flex: 3;
+    position: sticky;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    padding: 2rem 3rem;
+    overflow-y: auto;
+    background-color: #fff;
+    border-left: 1px solid var(--slate-gray-200);
 }
 
 /* =============== 4. 태그 (향수 특성) =============== */
@@ -174,7 +180,7 @@ img {
 
 /* =============== 10. 탭 전체 영역 (상세정보 / 제품안내 / 구매안내 / 리뷰) =============== */
 .tab-all {
-    width: 60%;
+    /* width: 60%; */
     margin-top: 60px;
     padding-right: 1rem;
 }
@@ -500,7 +506,7 @@ img {
   background: #111;
   color: #fff;
   border: 1px solid #111;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   text-decoration: none;
   font-weight: 700;
 }
@@ -510,6 +516,11 @@ img {
 
 /* =============== 20. 반응형 (모바일 768px 이하) =============== */
 @media (max-width: 768px) {
+  .wide-frame {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+}
   .top__right__space {
     border-left: 1px solid #fff;
 }
@@ -543,19 +554,36 @@ img {
   .top__left__space {
     width: 100%;
   }
-
+.top__right__space .cost, .top__right__space .choose select {
+  display: none;
+}
+.top__right__space .upanddown {
+    display: none;
+}
+.top__right__space .title {
+    margin-bottom: 0;
+}
+.title p:nth-of-type(2) {
+    margin-bottom: 1rem;
+}
+.top__left__space figure img {
+    width: 100%;
+    border: 1px solid var(--slate-gray-300);
+    margin-top: 0;
+}
+}
   /* 탭/상세 영역 전체 풀 너비 사용 */
   .tab-all {
     width: 100%;
   }
 
   /* 바텀시트 내에서는 태그, 큰 제목 제거 */
-  .sheet-panel .tag {
+  /* .sheet-panel .tag {
     display: none;
   }
   .sheet-panel .title {
     display: none;
-  }
+  } */
 
   /* 수량 영역 간격 정리 */
   .sheet-panel .upanddown {
@@ -582,7 +610,6 @@ img {
   body {
     padding-bottom: 70px;
   }
-}
 
 /* =============== 21. 태블릿 대응 (1440px 이하) =============== */
 @media (max-width: 1440px) {
@@ -591,3 +618,4 @@ img {
     align-items: flex-start;
   }
 }
+
