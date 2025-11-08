@@ -1,18 +1,5 @@
 /* =============== 0. 초기값 & 공통 =============== */
-html { scroll-behavior: smooth; }  
-* {
-  box-sizing: border-box;
-}
-body {
-  margin: 0;
-  font-family: Pretendard, sans-serif;
-  color: #111;
-}
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
+
 
 /* 아이콘/별은 커지지 않도록 예외 처리 */
 .review__page img[alt*="star"],
@@ -350,9 +337,10 @@ img {
 
 /* 닉네임 + 별점 + 날짜 */
 .review__left__1 {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 .review__left__1 figure {
   display: flex;
@@ -581,7 +569,6 @@ img {
     border: 1px solid var(--slate-gray-300);
     margin-top: 0;
 }
-}
   /* 탭/상세 영역 전체 풀 너비 사용 */
   .tab-all {
     width: 100%;
@@ -612,16 +599,27 @@ img {
 
   /* 리뷰 카드 모바일에서 세로 정렬 */
   .review__page {
-    /* flex-direction: column; */
+    flex-direction: row;
     text-align: left;
   }
+  .review-img{
+  width: 100px;
+  height: auto;
+  border-radius: 8px;
+}
 
   /* 본문 아래 여백(고정바 높이만큼) */
   body {
     padding-bottom: 70px;
   }
+}
 @media (max-width:300px){
+   .review__page {
+    flex-direction: column;
+    text-align: center;
+  }
   .review__left__1 {
+    
     display: flex;
     flex-direction: column;
     align-items: center;
