@@ -1,7 +1,7 @@
 fetch('/header.html')
     .then(response => response.text())
     .then(data => {
-        document.querySelector(".header-wrap").innerHTML += data
+        document.querySelector(".header-copy-wrap").innerHTML += data
         // 성공 시 이벤트 추가
 
         /////////////////////////투명 헤더에 들어가는 기능들 inscent에 맞게 수정//////////////////////////////
