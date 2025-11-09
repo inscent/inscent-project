@@ -1,4 +1,8 @@
 /* 레이아웃 */
+
+main .banner{
+  margin-top: 4rem;
+}
 .banner{
   background: url(../img/product-list/background.jpg) center/ cover no-repeat;
   height: 270px;
@@ -9,6 +13,9 @@
     text-align: center;
     padding-top: 6rem;
     font-size: 1.6rem;
+}
+.wide-frame .p-wrap{
+  margin-bottom: 10rem;
 }
 .p-wrap {
     display: grid;

@@ -17,11 +17,11 @@ html{
   box-sizing: border-box;
 }
 
-.top__bg{
+.top__bg {
     background: url(../img/inscenttalk-main-1.jpg) 50% 50% / cover;
     /* margin-bottom: 6.15rem; */
     height: 13.9rem;
-    margin: 0 auto 6.15rem;
+    margin: 4rem auto 6.15rem;
 }
 
 /* 제목 영역 */

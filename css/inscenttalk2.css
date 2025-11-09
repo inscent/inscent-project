@@ -29,6 +29,10 @@ body {
   padding: 0 var(--wrap-padding);
 } */
 
+.container{
+  margin-top: 10rem;
+}
+
 /* 헤더 */
 .page-head {
   text-align: center;

@@ -9,6 +9,10 @@ html, body {
   font-size: 20px;
 }
 
+.wide-frame .order-and-delivery{
+  margin-top: 4rem;
+}
+
 /* 공통 프레임 */
 .order-and-delivery,
 .common-frame {
