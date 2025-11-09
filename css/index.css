@@ -16,6 +16,13 @@
   width: 100%;
   overflow: hidden;
 }
+.hero-banner .banner-link{
+  position: absolute;
+  inset: 0;           /* top:0; right:0; bottom:0; left:0; */
+  display: block;
+  z-index: 5;         /* 이미지 위로 */
+}
+
 
 .main-banner img,
 .main-banner video {
@@ -43,7 +50,7 @@
   left: 50%; top: 50%;
   transform: translate(-50%, -50%);
   text-align: center; color: #fff;
-  z-index: 30;
+  z-index: 10;
   pointer-events: none; /* 클릭 방해 방지 */
 }
 

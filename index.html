@@ -48,23 +48,17 @@
 
     <!--  2. 사진 배너 (텍스트 포함된 이미지) -->
     <li class="hero-banner swiper-slide">
-      <img src="./img/main-banner/benner-pc01.jpg" alt="향수 이벤트 배너 1">
-      <img src="./img/main-banner/benner-tab01.jpg" alt="향수 이벤트 배너 1">
-      <img src="./img/main-banner/benner-mo01.jpg" alt="향수 이벤트 배너 1">
+      <a class="banner-link" href="/inscentalk.html"></a><img src="./img/main-banner/benner-pc01.jpg" alt="향수 이벤트 배너 1">
     </li>
 
     <!--  3. 사진 배너 -->
     <li class="hero-banner  swiper-slide">
-      <img src="./img/main-banner/benner-pc02.jpg" alt="향수 이벤트 배너 2">
-      <img src="./img/main-banner/benner-tab02.jpg" alt="향수 이벤트 배너 2">
-      <img src="./img/main-banner/benner-mo02.jpg" alt="향수 이벤트 배너 2">
+      <a class="banner-link" href="/magazine.html"></a><img src="./img/main-banner/benner-pc02.jpg" alt="향수 이벤트 배너 2">
     </li>
 
     <!--  4. 사진 배너 -->
     <li class="hero-banner  swiper-slide">
-      <img src="./img/main-banner/benner-pc03.jpg" alt="향수 이벤트 배너 3">
-      <img src="./img/main-banner/benner-tab03.jpg" alt="향수 이벤트 배너 3">
-      <img src="./img/main-banner/benner-mo03.jpg" alt="향수 이벤트 배너 3">
+      <a class="banner-link" href="/ai.html"></a><img src="./img/main-banner/benner-pc03.jpg" alt="향수 이벤트 배너 3">
     </li>
 
   </ul>
@@ -92,17 +86,18 @@
 
     <!--  2. 사진 배너 (텍스트 포함된 이미지) -->
     <li class="hero-banner swiper-slide">
-      <img src="./img/main-banner/banner-tab01.jpg" alt="향수 이벤트 배너 1">
+      <a class="banner-link" href="/inscentalk.html"></a><img src="./img/main-banner/banner-tab01.jpg" alt="향수 이벤트 배너 1">
+      
     </li>
 
     <!--  3. 사진 배너 -->
     <li class="hero-banner  swiper-slide">
-      <img src="./img/main-banner/banner-tab02.jpg" alt="향수 이벤트 배너 2">
+      <a class="banner-link" href="/magazine.html"></a><img src="./img/main-banner/banner-tab02.jpg" alt="향수 이벤트 배너 2">
     </li>
 
     <!--  4. 사진 배너 -->
     <li class="hero-banner  swiper-slide">
-      <img src="./img/main-banner/banner-tab03.jpg" alt="향수 이벤트 배너 3">
+      <a class="banner-link" href="/ai.html"></a><img src="./img/main-banner/banner-tab03.jpg" alt="향수 이벤트 배너 3">
     </li>
 
   </ul>
@@ -131,16 +126,19 @@
 
     <!--  2. 사진 배너 (텍스트 포함된 이미지) -->
     <li class="hero-banner swiper-slide">
+      <a class="banner-link" href="/inscentalk.html"></a>
       <img src="./img/main-banner/banner-mo01.jpg" alt="향수 이벤트 배너 1">
     </li>
 
     <!--  3. 사진 배너 -->
     <li class="hero-banner  swiper-slide">
+      <a class="banner-link" href="/magazine.html"></a>
       <img src="./img/main-banner/banner-mo02.jpg" alt="향수 이벤트 배너 2">
     </li>
 
     <!--  4. 사진 배너 -->
     <li class="hero-banner  swiper-slide">
+      <a class="banner-link" href="/ai.html"></a>
       <img src="./img/main-banner/banner-mo03.jpg" alt="향수 이벤트 배너 3">
     </li>
 
@@ -157,7 +155,8 @@
 <div class="header-color-wrap"></div>
 <div class="wide-frame">
     <!-- 신상품 섹션 -->
-    <section class="main-new common-frame">
+  <div class="common-frame">
+    <section class="main-new">
       <!-- 섹션 타이틀 -->
       <div class="new-txt">
         <h1 class="title">NEW</h1><div class="onlymo"><img src="./img/Line 2.svg" alt=""></div>
@@ -192,6 +191,7 @@
         </div>
       </div>
     </section>
+  </div>
 
     <!-- 랭킹 섹션 -->
     <div class="rank-bg">
@@ -272,7 +272,8 @@
     </section>
 
     <!-- 커뮤니티 영역 -->
-    <section class="main-community common-frame">
+    <div class="common-frame">
+    <section class="main-community">
       <div class="main-title">
         <h1 class="title">INSCENTALK</h1>
       </div>
@@ -380,6 +381,7 @@
       </article>
       </div>
     </section>
+  </div>
     </div>
   </main>
 
@@ -390,6 +392,12 @@
   const heroPC = new Swiper('.main-banner', {
     direction: 'horizontal',
     loop: true,
+      
+    preventClicks: false,
+    preventClicksPropagation: false,
+    // 필요 시 링크 있는 슬라이드만 스와이프 금지
+  // noSwiping: true,
+  // noSwipingSelector: '.banner-link',
     autoplay: { delay: 3000, disableOnInteraction: false },
     pagination: { el: '.main-banner .swiper-pagination', clickable: true },
     navigation: {
@@ -401,6 +409,11 @@
   const heroTAB = new Swiper('.main-banner-tab', {
     direction: 'horizontal',
     loop: true,
+        preventClicks: false,
+    preventClicksPropagation: false,
+    // 필요 시 링크 있는 슬라이드만 스와이프 금지
+  // noSwiping: true,
+  // noSwipingSelector: '.banner-link',
     autoplay: { delay: 3000, disableOnInteraction: false },
     pagination: { el: '.main-banner-tab .swiper-pagination', clickable: true },
     navigation: {
@@ -413,6 +426,11 @@
 const moSwiper = new Swiper('.main-banner-mo', {
   loop: true,
   autoplay: { delay: 4000 },
+      preventClicks: false,
+    preventClicksPropagation: false,
+    // 필요 시 링크 있는 슬라이드만 스와이프 금지
+  // noSwiping: true,
+  // noSwipingSelector: '.banner-link',
   pagination: { el: '.main-banner-mo .swiper-pagination', clickable: true },
   navigation: { nextEl: '.main-banner-mo .swiper-button-next', prevEl: '.main-banner-mo .swiper-button-prev' },
 });
