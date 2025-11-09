@@ -151,10 +151,10 @@ function initHeaderUI() {
   }
 
   // 전체메뉴 안쪽 패딩을 GNB 정렬선에 맞춤
-  if (gnb && allInner) {
-    const left = gnb.getBoundingClientRect().left;
-    allInner.style.paddingLeft = left + 'px';
-  }
+  // if (gnb && allInner) {
+  //   const left = gnb.getBoundingClientRect().left;
+  //   allInner.style.paddingLeft = left + 'px';
+  // }
 }
 
 /* =========================
