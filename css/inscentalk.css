@@ -68,11 +68,11 @@ body div.container{
 
 /* 본문 카드 */
 .article {
-  background: var(--card-bg);
-  padding: 59px;
-  box-shadow: 0 0 20px rgba(0 0 0 / 8% );
-  width: 1153px;
-  margin: 0 auto 180px;
+    background: var(--card-bg);
+    padding: 59px;
+    box-shadow: 0 0 20px rgba(0 0 0 / 8% );
+    /* width: 1153px; */
+    margin: 0 auto 180px;
 }
 
 /* 제목/작성자 */

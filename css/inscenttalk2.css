@@ -66,13 +66,12 @@ body .container{
   background-color: #999999;
 } */
 
-/* 본문 카드 */
 .article {
-  background: var(--card-bg);
-  padding: 59px;
-  box-shadow: 0 0 20px rgba(0 0 0 / 8% );
-  width: 1153px;
-  margin: 0 auto 180px;
+    background: var(--card-bg);
+    padding: 59px;
+    box-shadow: 0 0 20px rgba(0 0 0 / 8% );
+    /* width: 1153px; */
+    margin: 0 auto 180px;
 }
 
 /* 제목/작성자 */
@@ -619,7 +618,7 @@ button {
 
 .input-box button {
     padding: 0;
-    border: 1px solid var(--slate-gray-300);
+    /* border: 1px solid var(--slate-gray-300); */
     border-radius: 8px;
     width: 3.5rem;
     color: var(--slate-gray-600);
