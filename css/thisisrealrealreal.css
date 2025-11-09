@@ -131,7 +131,7 @@ header.scrolled {
 }
 .header__all__inner {
     padding-top: 1rem;
-    /* padding-left: 14.5rem;    */
+    padding-left: 14.5rem !important;   
     display: flex;
     gap: 2rem;
     height: 233px;
