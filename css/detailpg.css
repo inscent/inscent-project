@@ -12,7 +12,7 @@
 }
 
 /* =============== 1. 상단 전체 레이아웃 =============== */
-.wide-frame {
+.detail-frame {
     position: relative;
     display: flex;
 }
@@ -514,7 +514,11 @@
 
 /* =============== 20. 반응형 (모바일 768px 이하) =============== */
 @media (max-width: 768px) {
-  .wide-frame {
+  .floating-wrap{
+    /* 푸터 플로팅버튼 스타일 */
+  bottom: calc(100px + env(safe-area-inset-bottom))!important; 
+}
+  .detail-frame {
     position: relative;
     display: flex;
     flex-direction: column-reverse;
