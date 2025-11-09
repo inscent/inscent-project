@@ -13,6 +13,10 @@ html, body {
   box-sizing: border-box;
 }
 
+.wide-frame .myinformation{
+  margin-top: 4rem;
+}
+
 /* 공통 프레임 */
 .order-and-delivery,
 .common-frame {

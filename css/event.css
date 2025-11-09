@@ -5,9 +5,9 @@
 }
 
 .mo-event{display: none;}
-.event-frame{
-  width: auto;
-  margin: 0 204px;
+.event-frame {
+    width: auto;
+    margin: 10rem 204px 0;
 }
 
 .event-item h3{

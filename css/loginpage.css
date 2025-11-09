@@ -1,13 +1,15 @@
 /* @media (min-width:1920px){ */
     body{
 
-        margin: 0 auto;margin
+        margin: 0 auto;
     }
 
 html{
     font-size: 20px;
 }
-
+.wide-frame .loginpage{
+    margin-top: 4rem;
+}
 .title__title{
     
 }

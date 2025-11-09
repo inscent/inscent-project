@@ -7,10 +7,11 @@ html{
 .about-us p {
   text-align: center;
 }
-.about-us{
+.wide-frame .about-us{
     display: flex;
     flex-direction: column;
     /* margin: 0 auto; */
+    margin-top: 4rem;
 }
 .about-us>h1{
     margin: 6rem 0;

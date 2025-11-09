@@ -8,7 +8,9 @@
 html {
   font-size: 20px;
 }
-
+.wide-frame .small-kit{
+  margin-top: 10rem;
+}
 .title__title {
   text-align: center;
   margin: 6rem 0 4.75rem 0;

@@ -7,6 +7,11 @@
             margin: auto;
         }
     } */
+.wide-frame .rank-pg{
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+}
+
 .rank-pg {
     margin-top: 6rem;
     margin-bottom: 10rem;
