@@ -71,8 +71,9 @@
 }
 
 @font-face {
-    font-family: 'ChettaVissto';
+    font-family: 'Chetta Vissto';
     src: url('../font/chetta_vissto/ChettaVissto.woff') format('woff'),
+    url('../font/chetta_vissto/ChettaVissto.otf') format('opentype'),
     url('../font/chetta_vissto/ChettaVissto.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
