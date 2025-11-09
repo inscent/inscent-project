@@ -104,13 +104,13 @@ gnbItems.forEach((li, index) => {
   });
 
   // ▷ header__all__inner padding 맞추기
-  const gnb = document.querySelector(".header__gnb");
-  if (gnb && allInner) {
-    allInner.style.paddingLeft = gnb.getBoundingClientRect().left + "px";
-  }
-});
+//   const gnb = document.querySelector(".header__gnb");
+//   if (gnb && allInner) {
+//     allInner.style.paddingLeft = gnb.getBoundingClientRect().left + "px";
+//   }
+// });
 
 // test
 
-
+})
 
