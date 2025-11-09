@@ -13,8 +13,8 @@ html, body {
   box-sizing: border-box;
 }
 
-.wide-frame .myinformation{
-  margin-top: 10rem;
+.wide-frame .myinformation {
+    margin-top: 4rem;
 }
 
 /* 공통 프레임 */
@@ -147,6 +147,9 @@ tbody{
     html{
         font-size: 18px;
     }
+    .wide-frame .myinformation {
+    margin-top: 0;
+}
     .inside__box__one p {
     font-size: 1rem;
 }

@@ -189,6 +189,12 @@
 /* =========================
    RESPONSIVE
    ========================= */
+@media (max-width:1440px){
+    .wide-frame .rank-pg {
+    margin-top: 4rem;
+}
+}
+
 @media (max-width: 1024px) {
     .rank-pg-list {
         grid-template-columns: 1fr;

@@ -29,7 +29,7 @@ body {
   padding: 0 var(--wrap-padding);
 } */
 
-.container{
+body .container{
   margin-top: 10rem;
 }
 
@@ -335,7 +335,9 @@ button {
   html {
     font-size: var(--basic-font-pc);
   }
-
+.container {
+    margin-top: 0;
+}
   .article {
     width: 1153px;
     padding: 60px;
@@ -366,7 +368,11 @@ button {
     font-size: 18px;
   }
 }
-
+@media (max-width:1440px){
+  body .container{
+    margin-top: 0;
+  }
+}
 
 /* ===========================
    💻 태블릿 (1024px 이하)
@@ -379,15 +385,17 @@ button {
   .container {
     padding: 0 30px;
   }
-
+.container{
+  margin-top: 0;
+}
   .page-head {
     margin-bottom: 80px;
   }
 
   .page-head .inscentalk {
-    font-size: 2.2rem;
+    font-size: 1.6rem;
     margin-top: 4rem;
-  }
+}
 
   .page-head nav {
     gap: 1.5rem;
@@ -558,13 +566,13 @@ button {
     padding: 0;
   }
   
-   body {
+   /* body {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0;
   background-color: var(--oat-100);
-}
+} */
 
 /* 컨테이너 중앙 정렬 및 최대 너비 지정 */
 .container {

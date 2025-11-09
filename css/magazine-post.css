@@ -2,7 +2,7 @@ main.m-post{
     margin-top: 10rem;
 }
 .pg-title{
-    font-size: 2.45rem;
+    font-size: 1.6rem;
     text-align: center;
     margin: 6rem 0;
 }
@@ -54,7 +54,11 @@ main.m-post{
 figure{
     width: 100%;
 }
-
+@media (max-width:1440px){
+    main.m-post{
+    margin-top: 0;
+}
+}
 @media (max-width:1024px){
     .txt-box-final p{
     width: auto;
