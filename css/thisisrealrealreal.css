@@ -394,8 +394,11 @@ header.scrolled {
         align-items: center; 
         height: 50px; 
     }
+    .header__icon__tab__mypage img{
+        width: 21.6px;
+    }
     .tab__inner {
-    /* width: auto; */
+    width: auto;
     flex-grow: 1;
     display: flex;
     justify-content: space-between;
@@ -403,11 +406,11 @@ header.scrolled {
     padding: 0 2rem;
     /* box-sizing: border-box; */
 }
-    .tab__inner::after {
+    /* .tab__inner::after {
         content: "";
         width: 40px; 
         display: block;  
-    }
+    } */
     .header__icon {
         flex-shrink: 0;
     }
@@ -434,6 +437,7 @@ header.scrolled {
     background-color: transparent;
     margin-bottom: 20px;
     width: 13.83rem;
+    color: white;
 }
 
 #search__tabmobile__input::placeholder {
@@ -560,6 +564,9 @@ header.scrolled {
     }
     .tab__header{
         height: 36px;
+    }
+    .header__icon__tab__mypage img{
+        width: 16.8px;
     }
     .tab__inner {
     /* width: auto; */

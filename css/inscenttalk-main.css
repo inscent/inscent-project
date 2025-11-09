@@ -9,6 +9,9 @@
 html{
     font-size: 20px;
 }
+.wide-frame .inscenttalk__main{
+    margin-bottom: 10rem;
+}
 .inscenttalk__main,
 .common-frame {
   display: flex;
@@ -136,6 +139,9 @@ html{
     html{
         font-size: 14px;
     }
+    .wide-frame .inscenttalk__main{
+    margin-bottom: 5rem;
+}
     .title__title {
     text-align: center;
     padding-top: 5rem;
