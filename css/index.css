@@ -9,16 +9,21 @@
 /* PC용 보이고, 태블릿용은 기본 감추기(미디어쿼리로 전환) */
 .main-banner { display:block !important; }
 .main-banner-tab { display:none !important; }
+.main-banner-mo{display: none !important;}
 
 .main-banner {
+  aspect-ratio: 1920/ 920;
   width: 100%;
-  height: calc(100vw * 920 / 1920);
-  max-height: 920px;
-  position: relative;
   overflow: hidden;
-  margin-bottom: 6rem;
 }
 
+.main-banner img,
+.main-banner video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 .hero-banner {
   width: 100%;
   height: 100%;
@@ -44,11 +49,14 @@
 
 /* ✅ 페이지네이션 위치 */
 .main-banner,
-.main-banner-tab { position: relative !important; }
+.main-banner-tab,
+.main-banner-mo
+ { position: relative !important; }
 
 /* 공백 위치 주의: 두 컨테이너의 '내부' 페이지네이션에 적용 */
 .main-banner .swiper-pagination,
-.main-banner-tab .swiper-pagination {
+.main-banner-tab .swiper-pagination,
+.main-banner-mo .swiper-pagination {
   position: absolute !important;
   bottom: 1rem !important;
   left: 50% !important;
@@ -68,7 +76,8 @@
 
 /* 공백 위치 주의: bullet 스타일 */
 .main-banner .swiper-pagination-bullet,
-.main-banner-tab .swiper-pagination-bullet {
+.main-banner-tab .swiper-pagination-bullet,
+.main-banner-mo .swiper-pagination-bullet {
   width: 30px !important;
   height: 3px !important;
   border-radius: 2px !important;
@@ -79,7 +88,8 @@
 
 /* 활성 bullet */
 .main-banner .swiper-pagination-bullet-active,
-.main-banner-tab .swiper-pagination-bullet-active {
+.main-banner-tab .swiper-pagination-bullet-active,
+.main-banner-mo .swiper-pagination-bullet-active {
   background: #fff !important;
   opacity: 1 !important;
   width: 40px !important;
@@ -655,7 +665,24 @@
 }
 
 @media (max-width: 1440px){
+  /* 배너  */
+.main-banner { display:none !important; }
+.main-banner-tab { display:block !important; }
+.main-banner-mo{display: none !important;}
+    /* 배너영역 */
+  .main-banner-tab {
+  aspect-ratio: 1024 / 1024;
+  width: 100%;
+  overflow: hidden;
+}
 
+.main-banner-tab img,
+.main-banner-tab video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
   /* 랭킹 */
   .rank-list > li.product-box:nth-child(n+6){
     display: none;
@@ -696,14 +723,7 @@
 }
 /* 탭 */
 @media(max-width:1024px){
-    /* 배너영역 */
-  .main-banner{
-    display: none !important;
-  }
-  .main-banner-tab{
-    display: block !important;
-    height: 100vh;
-  }
+
   /* 신상품 */
   .new-category {
     flex: 0 0 10rem;
@@ -724,6 +744,24 @@
 }
 /* 모바일 */
 @media (max-width:768px){
+    /* 배너  */
+.main-banner { display:none !important; }
+.main-banner-tab { display:none !important; }
+.main-banner-mo{display: block !important;}
+.main-banner-mo {
+
+  aspect-ratio: 790/1356;
+  width: 100%;
+  overflow: hidden;
+}
+
+.main-banner-mo img,
+.main-banner-mo video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
   /* 신상품 */
   .onlymo{display: block;
@@ -884,7 +922,7 @@
 }
 
 /* 배너 */
-.main-banner {
+/* .main-banner {
   display: none;
-}
+} */
 }
