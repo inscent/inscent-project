@@ -332,6 +332,9 @@ main .banner{
     width: 21px;
     height: 21px;
 }
+main .banner {
+    margin-top: 0;
+}
 }
 /* -----탭 버전 */
 @media(max-width:1024px){
@@ -422,5 +425,8 @@ main .banner{
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
+}
+.banner {
+    height: 200px;
 }
 }

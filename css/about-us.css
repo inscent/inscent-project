@@ -69,6 +69,9 @@ html { scroll-behavior: smooth; }
         font-size: var(--basic-font-tab);
         font-family: inherit; 
     }
+    .wide-frame .about-us {
+    margin-top: 0;
+}
     .about-us h2 {
     font-size: 1.55rem;
     line-height: 1.2;

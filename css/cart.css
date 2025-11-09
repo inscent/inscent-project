@@ -130,6 +130,9 @@
     html{
         font-size: 18px;
     }
+    .wide-frame .cart__page {
+    margin-top: 0;
+}
     .cart__list{
     grid-template-columns: 62fr 355fr 90fr 90fr 100fr 80fr; 
 }

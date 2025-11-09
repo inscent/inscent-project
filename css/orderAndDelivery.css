@@ -226,6 +226,12 @@ html, body {
   width: auto;
 }
 
+@media (max-width:1440px){
+  .wide-frame .order-and-delivery {
+    margin-top: 0;
+}
+}
+
 @media (max-width: 1024px) {
   html {
     font-size: 18px;
@@ -409,7 +415,7 @@ html, body {
 
 .title__title {
     text-align: center;
-    margin: 120px 0 3rem 0;
+    margin: 70px 0 3rem 0;
 }
 .inside__box__order__bottom .order__list .now {
     font-size: 10px;

@@ -512,6 +512,9 @@
   flex-direction: column;
   padding: 1rem;
 }
+.detail-frame {
+    margin-top: 0;
+}
 }
 
 /* =============== 20. 반응형 (모바일 768px 이하) =============== */

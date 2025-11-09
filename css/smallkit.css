@@ -104,6 +104,9 @@ main {
   main {
     gap: 3rem;
 }
+.wide-frame .small-kit {
+    margin-top: 0;
+}
 .info__3-1 {
     gap: 0.5rem;
     flex-direction: column;

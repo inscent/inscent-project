@@ -41,6 +41,9 @@
 .mo-event{display: none;}
 /* 탭 */
 @media (max-width: 1024px){
+    .event-frame {
+    margin-top: 0;
+}
 .event-detail-main{
     padding: 0 6rem;
     margin-bottom: 10rem;

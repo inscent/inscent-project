@@ -124,6 +124,9 @@ html{
     html{
         font-style: 18px;
     }
+    .wide-frame .loginpage {
+    margin-top: 0;
+}
     .loginpage .main-space {
     display: flex;
     gap: 10.56rem;
@@ -168,6 +171,9 @@ html{
     html{
         font-size: 14px;
     }
+    .wide-frame .loginpage {
+    margin-top: 0;
+}
     .login__sns img {
     width: 1.79rem;
 }

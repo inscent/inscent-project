@@ -114,6 +114,12 @@ html{
     }
 
 
+@media (max-width:1440px){
+    .top__bg {
+    margin: 0 auto 6.15rem;
+}
+}
+
 @media (max-width:1024px){
     html{
         font-size: 18px;
@@ -132,7 +138,7 @@ html{
     }
     .title__title {
     text-align: center;
-    padding-top: 6.79rem;
+    padding-top: 5rem;
     /* margin: 120px 0 88px 0; */
 }
     .top__bg {
