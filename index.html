@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>메인페이지</title>
+  <!-- 파비콘 -->
+   <link rel="icon" sizes="32x32" href="./img/favicon.png" type="image/png">
   <!-- 공통스타일 -->
   <link rel="stylesheet" href="./css/font.css">
   <link rel="stylesheet" href="./css/reset.css">
@@ -46,17 +48,23 @@
 
     <!--  2. 사진 배너 (텍스트 포함된 이미지) -->
     <li class="hero-banner swiper-slide">
-      <img src="./img/main-banner/banner1.jpg" alt="향수 이벤트 배너 1">
+      <img src="./img/main-banner/benner-pc01.jpg" alt="향수 이벤트 배너 1">
+      <img src="./img/main-banner/benner-tab01.jpg" alt="향수 이벤트 배너 1">
+      <img src="./img/main-banner/benner-mo01.jpg" alt="향수 이벤트 배너 1">
     </li>
 
     <!--  3. 사진 배너 -->
     <li class="hero-banner  swiper-slide">
-      <img src="./img/main-banner/banner2.jpg" alt="향수 이벤트 배너 2">
+      <img src="./img/main-banner/benner-pc02.jpg" alt="향수 이벤트 배너 2">
+      <img src="./img/main-banner/benner-tab02.jpg" alt="향수 이벤트 배너 2">
+      <img src="./img/main-banner/benner-mo02.jpg" alt="향수 이벤트 배너 2">
     </li>
 
     <!--  4. 사진 배너 -->
     <li class="hero-banner  swiper-slide">
-      <img src="./img/main-banner/banner3.jpg" alt="향수 이벤트 배너 3">
+      <img src="./img/main-banner/benner-pc03.jpg" alt="향수 이벤트 배너 3">
+      <img src="./img/main-banner/benner-tab03.jpg" alt="향수 이벤트 배너 3">
+      <img src="./img/main-banner/benner-mo03.jpg" alt="향수 이벤트 배너 3">
     </li>
 
   </ul>
@@ -84,17 +92,56 @@
 
     <!--  2. 사진 배너 (텍스트 포함된 이미지) -->
     <li class="hero-banner swiper-slide">
-      <img src="./img/main-banner/tabbanner1.jpg" alt="향수 이벤트 배너 1">
+      <img src="./img/main-banner/banner-tab01.jpg" alt="향수 이벤트 배너 1">
     </li>
 
     <!--  3. 사진 배너 -->
     <li class="hero-banner  swiper-slide">
-      <img src="./img/main-banner/tabbanner1.jpg" alt="향수 이벤트 배너 2">
+      <img src="./img/main-banner/banner-tab02.jpg" alt="향수 이벤트 배너 2">
     </li>
 
     <!--  4. 사진 배너 -->
     <li class="hero-banner  swiper-slide">
-      <img src="./img/main-banner/tabbanner3.jpg" alt="향수 이벤트 배너 3">
+      <img src="./img/main-banner/banner-tab03.jpg" alt="향수 이벤트 배너 3">
+    </li>
+
+  </ul>
+    <!--  페이징: wrapper(ul) 밖, .main-banner 안 -->
+  <div class="swiper-pagination"></div>
+
+  <!-- (옵션) 화살표 -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+</section>
+
+<section class="main-banner-mo swiper">
+  <ul class="banner-list swiper-wrapper">
+    
+    <!--  1. 영상 배너 -->
+    <li class="hero-banner swiper-slide">
+      <video autoplay loop muted playsinline>
+        <source src="./img/hero-banner.mp4" type="video/mp4">
+      </video>
+      <div class="hero-text">
+        <h1 class="title">A Moment Within Scent</h1>
+        <p>향기 속에서 머무는 순간</p>
+      </div>
+    </li>
+
+    <!--  2. 사진 배너 (텍스트 포함된 이미지) -->
+    <li class="hero-banner swiper-slide">
+      <img src="./img/main-banner/banner-mo01.jpg" alt="향수 이벤트 배너 1">
+    </li>
+
+    <!--  3. 사진 배너 -->
+    <li class="hero-banner  swiper-slide">
+      <img src="./img/main-banner/banner-mo02.jpg" alt="향수 이벤트 배너 2">
+    </li>
+
+    <!--  4. 사진 배너 -->
+    <li class="hero-banner  swiper-slide">
+      <img src="./img/main-banner/banner-mo03.jpg" alt="향수 이벤트 배너 3">
     </li>
 
   </ul>
@@ -361,6 +408,14 @@
       prevEl: '.main-banner-tab .swiper-button-prev'
     }
   });
+
+  // Mobile
+const moSwiper = new Swiper('.main-banner-mo', {
+  loop: true,
+  autoplay: { delay: 4000 },
+  pagination: { el: '.main-banner-mo .swiper-pagination', clickable: true },
+  navigation: { nextEl: '.main-banner-mo .swiper-button-next', prevEl: '.main-banner-mo .swiper-button-prev' },
+});
 </script>
 
 <div class="footer-real-wrap"></div>
