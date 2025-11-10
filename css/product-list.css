@@ -399,8 +399,9 @@ main .banner {
 }
 
 .p-cate dl {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
 }
 .p-cate dt {
     display: none;
@@ -424,7 +425,7 @@ main .banner {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 .banner {
     height: 200px;
