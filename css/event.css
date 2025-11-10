@@ -37,7 +37,7 @@
 .event-item figure img {
     object-fit: cover;
     width: auto;
-    height: 100%;
+    /* height: 100%; */
 }
 .event-item p{
     text-align: left;
@@ -67,6 +67,9 @@ h3{
   width: auto;
   margin: 0 63px;
 }
-  .event-item .mo-event{display: block;}
+  .event-item .mo-event{
+    display: block;
+    aspect-ratio: 267 / 185;
+  }
   .event-item .pc-event{display: none;}
 }     
