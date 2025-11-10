@@ -49,8 +49,9 @@
     
     /* 슬라이드 */
     .aicommand {
-    height: 100vh;
+    /* height: 100vh; */
     /* top: 50px; */
+    width: 100%;
     }
     .ai{
       margin-bottom: 8rem;
@@ -223,6 +224,7 @@
 }
     .ai img {
     /* width: 100%; */
+    width: 95px;
     object-fit: cover;
     aspect-ratio: 1/1;
     height: 95px;
