@@ -503,7 +503,7 @@ header.scrolled {
     .tab__all__dep1 {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease 0s;
+    transition: max-height 0.8s ease 0s;
     padding-left: 0.7rem;
     }
     .tab__all__menu > li:hover .tab__all__dep1 {
@@ -536,7 +536,7 @@ header.scrolled {
     content: "▾"; 
     position: absolute;
     right: 0.7rem;
-    transition: transform 0.6s ease 0s;
+    transition: transform 0.8s ease 0s;
     }
     .tab__all__menu > li:hover > a::after {
     transform: rotate(180deg);
