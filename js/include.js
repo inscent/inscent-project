@@ -1,5 +1,6 @@
+document.addEventListener("DOMContentLoaded",function(){
 
-fetch('/header.html')
+  fetch('/header.html')
   .then(res => res.text())
   .then(html => {
     const wrap = document.querySelector('.header-wrap');
@@ -233,3 +234,6 @@ fetch('/footer.html')
     fw.insertAdjacentHTML('beforeend', html);
   })
   .catch(err => console.log('푸터 추가 에러 : ', err));
+
+
+})
